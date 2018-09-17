@@ -20,18 +20,5 @@
             <version>1.0.0</version>
         </dependency>
     </dependencies>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.tomcat.maven</groupId>
-                <artifactId>tomcat7-maven-plugin</artifactId>
-                <version>2.2</version>
-                <configuration>
-                    <path>/</path>
-                    <port>8085</port>
-                    <server>tomcat7</server>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+
 </project>
