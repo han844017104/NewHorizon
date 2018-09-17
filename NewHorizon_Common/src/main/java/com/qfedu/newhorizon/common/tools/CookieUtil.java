@@ -24,6 +24,7 @@ public class CookieUtil {
     public static void setCK(HttpServletResponse response,String name,String value){
         Cookie cookie=new Cookie(name,value);
         cookie.setMaxAge(-1);
+
         cookie.setDomain("localhost");
         cookie.setPath("/");
         cookie.setMaxAge(60 * 30);
