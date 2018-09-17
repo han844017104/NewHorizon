@@ -22,7 +22,7 @@
       nickname, maketime, flag
       )
     values (#{username,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{nickname,jdbcType=VARCHAR}, #{maketime,jdbcType=DATE}, #{flag,jdbcType=INTEGER}
+      #{nickname,jdbcType=VARCHAR}, now(), #{flag,jdbcType=INTEGER}
       )
   </insert>
   <select id="selectByUsername" resultType="com.qfedu.newhorizon.domain.user.UserMain">
