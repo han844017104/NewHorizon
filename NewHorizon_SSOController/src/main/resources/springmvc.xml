@@ -15,7 +15,7 @@
 
     <!--扫描控制器类所在包 -->
     <context:component-scan
-            base-package="com.Wyh10000.controller"></context:component-scan>
+            base-package="com.qfedu.newhorizon.controller.sso"></context:component-scan>
     <!--&lt;!&ndash;1、命名  消费者名称&ndash;&gt;-->
     <!--<dubbo:application name="ssoconsumer"></dubbo:application>-->
     <!--&lt;!&ndash;2、注册中心&ndash;&gt;-->

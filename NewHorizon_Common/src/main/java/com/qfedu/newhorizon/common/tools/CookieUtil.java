@@ -26,6 +26,7 @@ public class CookieUtil {
         cookie.setMaxAge(-1);
         cookie.setDomain("localhost");
         cookie.setPath("/");
+        cookie.setMaxAge(60 * 30);
         response.addCookie(cookie);
     }
     //删除Cookie

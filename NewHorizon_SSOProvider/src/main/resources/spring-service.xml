@@ -32,6 +32,7 @@
             <tx:method name="save*" />
             <tx:method name="update*" />
             <tx:method name="del*" />
+            <tx:method name="*" />
         </tx:attributes>
     </tx:advice>
     <!--配置aop -->

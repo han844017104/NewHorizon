@@ -51,5 +51,7 @@ public class EncrypUtil {
         return new String(new AesCipherService().decrypt(Base64.decode(value),key.getEncoded()).getBytes());
     }
 
-
+    public static void main(String[] args) {
+        System.out.println("Password : "+md5Pass("1", "123"));
+    }
 }
