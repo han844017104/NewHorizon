@@ -16,6 +16,9 @@
         <module>NewHorizon_SSOProvider</module>
         <module>NewHorizon_SSOService</module>
         <module>NewHorizon_FDFSController</module>
+        <module>NewHorizon_UserService</module>
+        <module>NewHorizon_UserProvider</module>
+        <module>NewHorizon_WebController</module>
     </modules>
 
     <!--jar依赖的版本号-->

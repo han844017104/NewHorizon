@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="NewHorizon_SSOController:war">
+    <output-path>$PROJECT_DIR$/NewHorizon_SSOController/target</output-path>
+    <root id="archive" name="NewHorizon_SSOController-1.0.0.war">
+      <element id="artifact" artifact-name="NewHorizon_SSOController:war exploded" />
+    </root>
+  </artifact>
+</component>

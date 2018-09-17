@@ -12,21 +12,21 @@
     <artifactId>NewHorizon_SSOService</artifactId>
     <packaging>jar</packaging>
     <dependencies>
-        <dependency>
-            <groupId>com.qfedu</groupId>
-            <artifactId>NewHorizon_Common</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.qfedu</groupId>
-            <artifactId>NewHorizon_Domain</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.qfedu</groupId>
-            <artifactId>NewHorizon_Mapper</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-    </dependencies>
+    <dependency>
+        <groupId>com.qfedu</groupId>
+        <artifactId>NewHorizon_Common</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+    <dependency>
+        <groupId>com.qfedu</groupId>
+        <artifactId>NewHorizon_Domain</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+    <dependency>
+        <groupId>com.qfedu</groupId>
+        <artifactId>NewHorizon_Mapper</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+</dependencies>
 
 </project>
