@@ -3,6 +3,8 @@ package com.qfedu.newhorizon.service.user;
 import com.qfedu.newhorizon.common.result.R;
 import com.qfedu.newhorizon.common.result.RO;
 import com.qfedu.newhorizon.domain.user.User;
+import com.qfedu.newhorizon.domain.user.UserMain;
+import com.qfedu.newhorizon.mapper.user.UserMapper;
 
 /**
  * @Auther: KAM1996
@@ -12,6 +14,6 @@ import com.qfedu.newhorizon.domain.user.User;
  */
 public interface UserService {
     //用户注册
-    public R register(User user);
+    public R register(UserMain user);
     //
 }

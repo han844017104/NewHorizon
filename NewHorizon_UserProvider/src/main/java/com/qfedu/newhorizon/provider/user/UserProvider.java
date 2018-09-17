@@ -1,6 +1,6 @@
 package com.qfedu.newhorizon.provider.user;
 import com.qfedu.newhorizon.common.result.R;
-import com.qfedu.newhorizon.domain.user.User;
+import com.qfedu.newhorizon.domain.user.UserMain;
 import com.qfedu.newhorizon.mapper.user.UserMapper;
 import com.qfedu.newhorizon.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ public class UserProvider implements UserService {
     @Autowired
     private UserMapper userMapper;
     @Override
-    public R register(User user) {
+    public R register(UserMain user) {
         return userMapper.insert(user)>0?R.OK():R.ERROR();
     }
 }
