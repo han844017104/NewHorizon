@@ -14,6 +14,6 @@ import com.qfedu.newhorizon.mapper.user.UserMapper;
  */
 public interface UserService {
     //用户注册
-    public R register(UserMain user);
+    R register(UserMain user);
     //
 }
