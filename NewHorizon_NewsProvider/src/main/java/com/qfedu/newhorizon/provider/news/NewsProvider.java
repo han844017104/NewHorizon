@@ -95,6 +95,10 @@ public class NewsProvider implements NewsService {
     //一级分类
     @Override
     public R selectFather() {
-        return null;
+        List<NewTypeMain> newTypeMains = newTypeMapper.selectAllFather();
+        if(newTypeMains != null && newTypeMains.size() > 0){
+            return new R(0,"ok",newTypeMains);
+        }
+        return R.ERROR();
     }
 }
