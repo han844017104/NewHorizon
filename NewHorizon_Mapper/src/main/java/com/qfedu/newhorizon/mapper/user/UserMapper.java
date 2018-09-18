@@ -6,7 +6,7 @@ import com.qfedu.newhorizon.domain.user.UserMain;
 public interface UserMapper {
 
 
-    int insert(User record);
+    int insert(UserMain record);
 
     UserMain selectByUsername(String username);
 }

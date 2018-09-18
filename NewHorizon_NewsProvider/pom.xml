@@ -11,5 +11,14 @@
 
     <artifactId>NewHorizon_NewsProvider</artifactId>
 
+    <packaging>war</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.qfedu</groupId>
+            <artifactId>NewHorizon_NewsService</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
 
 </project>

@@ -16,12 +16,12 @@
         <module>NewHorizon_SSOProvider</module>
         <module>NewHorizon_SSOService</module>
         <module>NewHorizon_FDFSController</module>
+        <module>NewHorizon_UserController</module>
+        <module>NewHorizon_UserService</module>
+        <module>NewHorizon_UserProvider</module>
         <module>NewHorizon_NewsService</module>
         <module>NewHorizon_NewsProvider</module>
         <module>NewHorizon_NewsController</module>
-        <module>NewHorizon_UserService</module>
-        <module>NewHorizon_UserProvider</module>
-        <module>NewHorizon_UserController</module>
     </modules>
 
     <!--jar依赖的版本号-->

@@ -1,6 +1,5 @@
 package com.qfedu.newhorizon.domain.user;
 
-import java.util.Date;
 
 /**
  * 　　　Create   By   Mr.Han
@@ -21,7 +20,7 @@ public class UserMain extends User{
     private String nickname;
 
 
-    private Date maketime;
+    private String maketime;
 
 
     private Integer flag;
@@ -66,15 +65,13 @@ public class UserMain extends User{
     }
 
 
-    public Date getMaketime() {
+    public String getMaketime() {
         return maketime;
     }
 
-
-    public void setMaketime(Date maketime) {
+    public void setMaketime(String maketime) {
         this.maketime = maketime;
     }
-
 
     public Integer getFlag() {
         return flag;

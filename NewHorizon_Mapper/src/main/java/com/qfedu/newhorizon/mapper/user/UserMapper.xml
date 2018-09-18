@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.qfedu.newhorizon.mapper.user.UserMapper" >
-  <resultMap id="BaseResultMap" type="com.qfedu.newhorizon.domain.user.User" >
+  <resultMap id="BaseResultMap" type="com.qfedu.newhorizon.domain.user.UserMain" >
     <id column="uid" property="uid" jdbcType="INTEGER" />
     <result column="username" property="username" jdbcType="VARCHAR" />
     <result column="tel" property="tel" jdbcType="VARCHAR" />
@@ -14,7 +14,7 @@
     
     uid, username, tel, password, nickname, maketime, flag
   </sql>
-  <insert id="insert" parameterType="com.qfedu.newhorizon.domain.user.User" >
+  <insert id="insert" parameterType="com.qfedu.newhorizon.domain.user.UserMain" >
     <selectKey resultType="java.lang.Integer" keyProperty="uid" order="AFTER" >
       SELECT LAST_INSERT_ID()
     </selectKey>
@@ -22,7 +22,7 @@
       nickname, maketime, flag
       )
     values (#{username,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{nickname,jdbcType=VARCHAR}, #{maketime,jdbcType=DATE}, #{flag,jdbcType=INTEGER}
+      #{nickname,jdbcType=VARCHAR}, now(), #{flag,jdbcType=INTEGER}
       )
   </insert>
   <select id="selectByUsername" resultType="com.qfedu.newhorizon.domain.user.UserMain">

@@ -11,5 +11,24 @@
 
     <artifactId>NewHorizon_NewsController</artifactId>
 
+    <packaging>war</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.qfedu</groupId>
+            <artifactId>NewHorizon_NewsService</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>6.0.7.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
 
 </project>
