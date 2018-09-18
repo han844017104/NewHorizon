@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qfedu.newhorizon.mapper.user.CityMapper" >
+    <resultMap id="BaseResultMap" type="com.qfedu.newhorizon.domain.user.City" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="cname" property="cname" jdbcType="VARCHAR" />
+        <result column="pid" property="pid" jdbcType="INTEGER" />
+    </resultMap>
+    <sql id="Base_Column_List" >
+        id, cname, pid
+    </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+        select
+        <include refid="Base_Column_List" />
+        from t_city
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+        delete from t_city
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.qfedu.newhorizon.domain.user.City" >
+        <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into t_city (cname, pid)
+        values (#{cname,jdbcType=VARCHAR}, #{pid,jdbcType=INTEGER})
+    </insert>
+    <insert id="insertSelective" parameterType="com.qfedu.newhorizon.domain.user.City" >
+        <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into t_city
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="cname != null" >
+                cname,
+            </if>
+            <if test="pid != null" >
+                pid,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="cname != null" >
+                #{cname,jdbcType=VARCHAR},
+            </if>
+            <if test="pid != null" >
+                #{pid,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.qfedu.newhorizon.domain.user.City" >
+        update t_city
+        <set >
+            <if test="cname != null" >
+                cname = #{cname,jdbcType=VARCHAR},
+            </if>
+            <if test="pid != null" >
+                pid = #{pid,jdbcType=INTEGER},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.qfedu.newhorizon.domain.user.City" >
+        update t_city
+        set cname = #{cname,jdbcType=VARCHAR},
+          pid = #{pid,jdbcType=INTEGER}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <select id="selectByPid" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+        select <include refid="Base_Column_List" /> from t_city where pid = #{pid,jdbcType=INTEGER}
+    </select>
+
+</mapper>
