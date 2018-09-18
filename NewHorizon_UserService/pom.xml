@@ -8,9 +8,10 @@
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>NewHorizon_UserService</artifactId>
-    <packaging>jar</packaging>
 
+    <artifactId>NewHorizon_UserService</artifactId>
+
+    <packaging>jar</packaging>
     <dependencies>
         <dependency>
             <groupId>com.qfedu</groupId>
@@ -19,12 +20,12 @@
         </dependency>
         <dependency>
             <groupId>com.qfedu</groupId>
-            <artifactId>NewHorizon_Domain</artifactId>
+            <artifactId>NewHorizon_Mapper</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>com.qfedu</groupId>
-            <artifactId>NewHorizon_Mapper</artifactId>
+            <artifactId>NewHorizon_Domain</artifactId>
             <version>1.0.0</version>
         </dependency>
     </dependencies>
