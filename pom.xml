@@ -19,6 +19,9 @@
         <module>NewHorizon_UserController</module>
         <module>NewHorizon_UserService</module>
         <module>NewHorizon_UserProvider</module>
+        <module>NewHorizon_NewsService</module>
+        <module>NewHorizon_NewsProvider</module>
+        <module>NewHorizon_NewsController</module>
     </modules>
 
     <!--jar依赖的版本号-->

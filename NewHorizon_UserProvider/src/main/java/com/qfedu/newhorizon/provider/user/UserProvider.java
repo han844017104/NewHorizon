@@ -1,4 +1,5 @@
 package com.qfedu.newhorizon.provider.user;
+import com.qfedu.newhorizon.common.redis.RedisUtil;
 import com.qfedu.newhorizon.common.result.R;
 import com.qfedu.newhorizon.domain.user.UserMain;
 import com.qfedu.newhorizon.mapper.user.UserMapper;
@@ -19,6 +20,10 @@ public class UserProvider implements UserService {
 
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private RedisUtil ru;
+
     @Override
     public R register(UserMain user) {
         if(user!=null){
