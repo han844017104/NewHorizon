@@ -1,5 +1,6 @@
 package com.qfedu.newhorizon.provider.user;
 
+import com.qfedu.newhorizon.common.result.R;
 import com.qfedu.newhorizon.common.result.RO;
 import com.qfedu.newhorizon.domain.user.UserDetail;
 import com.qfedu.newhorizon.mapper.user.UserDetailMapper;
@@ -13,8 +14,12 @@ public class UserDetailProvider implements UserDetailService {
     private UserDetailMapper userDetailMapper;
 
     @Override
-    public RO save(UserDetail userDetail) {
-        return RO.creat(userDetailMapper.insert(userDetail));
+    public R save(UserDetail userDetail) {
+        if(userDetail!=null){
+            userDetailMapper.insert(userDetail);
+            return R.OK();
+        }
+        return R.ERROR();
     }
 
     @Override

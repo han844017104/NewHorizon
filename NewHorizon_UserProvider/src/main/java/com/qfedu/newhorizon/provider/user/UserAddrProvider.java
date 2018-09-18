@@ -26,6 +26,6 @@ public class UserAddrProvider implements UserAddrService {
         if(uid!=null){
             return userAddrMapper.selectByUid(uid);
         }
-       
+        return null;
     }
 }
