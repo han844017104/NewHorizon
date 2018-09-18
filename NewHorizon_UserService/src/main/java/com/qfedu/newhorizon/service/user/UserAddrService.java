@@ -6,4 +6,6 @@ public interface UserAddrService {
     int save(UserAddr userAddr);
 
     int query(UserAddr userAddr);
+
+    UserAddr select(int uid);
 }

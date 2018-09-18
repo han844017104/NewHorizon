@@ -20,4 +20,9 @@ public class UserAddrProvider implements UserAddrService {
     public int query(UserAddr userAddr) {
         return userAddrMapper.updateById(userAddr);
     }
+
+    @Override
+    public UserAddr select(int uid) {
+        return userAddrMapper.selectByUid(uid);
+    }
 }

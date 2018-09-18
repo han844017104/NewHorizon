@@ -9,7 +9,7 @@ public interface UserAddrMapper {
 
     int insertSelective(UserAddr record);
 
-    UserAddr selectByPrimaryKey(Integer id);
+    UserAddr selectByUid(Integer uid);
 
     int updateByPrimaryKeySelective(UserAddr record);
 
