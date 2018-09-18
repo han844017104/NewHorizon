@@ -10,13 +10,10 @@
   <sql id="Base_Column_List" >
     typeid, typename, leave, fatherid
   </sql>
-  <insert id="insert" parameterType="com.qfedu.newhorizon.domain.newtype.NewType" >
-    <selectKey resultType="java.lang.Integer" keyProperty="typeid" order="AFTER" >
-      SELECT LAST_INSERT_ID()
-    </selectKey>
-    insert into t_newstype (typename, leave, fatherid
-      )
-    values (#{typename,jdbcType=VARCHAR}, #{leave,jdbcType=INTEGER}, #{fatherid,jdbcType=INTEGER}
-      )
-  </insert>
+  <select id="selectAll" resultType="com.qfedu.newhorizon.domain.newtype.NewTypeMain">
+    select * from t_newstype;
+  </select>
+  <select id="selectFather" resultType="com.qfedu.newhorizon.domain.newtype.NewTypeMain">
+    select * from t_newstype where leave=-1
+  </select>
 </mapper>
