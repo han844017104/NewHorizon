@@ -23,8 +23,6 @@ public class UserController {
     //注册
     @RequestMapping("/register.do")
     public R register(String username,String password){
-        System.out.println(username);
-        System.out.println(password);
         UserMain userMain = new UserMain();
         userMain.setUsername(username);
         userMain.setPassword(password);
