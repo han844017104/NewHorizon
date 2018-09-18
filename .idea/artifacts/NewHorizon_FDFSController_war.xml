@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="NewHorizon_FDFSController:war">
-    <output-path>$PROJECT_DIR$/NewHorizon_FDFSController/target</output-path>
-    <root id="archive" name="NewHorizon_FDFSController-1.0.0.war">
-      <element id="artifact" artifact-name="NewHorizon_FDFSController:war exploded" />
-    </root>
-  </artifact>
-</component>
