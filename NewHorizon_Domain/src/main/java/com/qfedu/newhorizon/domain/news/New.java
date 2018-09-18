@@ -1,8 +1,9 @@
 package com.qfedu.newhorizon.domain.news;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class New {
+public class New  implements Serializable {
     private Integer nid;
 
     public Integer getNid() {
