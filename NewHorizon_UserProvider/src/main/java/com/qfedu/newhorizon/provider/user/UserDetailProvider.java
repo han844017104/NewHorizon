@@ -1,6 +1,5 @@
 package com.qfedu.newhorizon.provider.user;
 
-import com.qfedu.newhorizon.common.redis.RedisUtil;
 import com.qfedu.newhorizon.common.result.RO;
 import com.qfedu.newhorizon.domain.user.UserDetail;
 import com.qfedu.newhorizon.mapper.user.UserDetailMapper;
@@ -8,13 +7,13 @@ import com.qfedu.newhorizon.service.user.UserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service("userServiceProvider")
-public class UserProvider implements UserDetailService {
+@Service("userDetailServiceProvider")
+public class UserDetailProvider implements UserDetailService {
     @Autowired
     private UserDetailMapper userDetailMapper;
 
     @Override
-    public RO saveDetail(UserDetail userDetail) {
+    public RO save(UserDetail userDetail) {
         return RO.creat(userDetailMapper.insert(userDetail));
     }
 

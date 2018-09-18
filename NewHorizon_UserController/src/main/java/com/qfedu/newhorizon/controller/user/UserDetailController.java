@@ -2,9 +2,7 @@ package com.qfedu.newhorizon.controller.user;
 
 import com.alibaba.fastjson.JSON;
 import com.qfedu.newhorizon.common.redis.JedisUtil;
-import com.qfedu.newhorizon.common.redis.RedisUtil;
 import com.qfedu.newhorizon.common.result.RO;
-import com.qfedu.newhorizon.common.tools.CookieUtil;
 import com.qfedu.newhorizon.common.tools.TokenTool;
 import com.qfedu.newhorizon.domain.user.User;
 import com.qfedu.newhorizon.domain.user.UserDetail;
@@ -16,19 +14,19 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
-public class UserController {
+public class UserDetailController {
     @Autowired
     private UserDetailService userDetailService;
     @Autowired
     private JedisUtil jedisUtil;
 
-    //新增
+    //新增用户详情
     @RequestMapping("userdetailsave.do")
-    public RO save(UserDetail userDetail) {
-        return userDetailService.saveDetail(userDetail);
+    public RO saveDetail(UserDetail userDetail) {
+        return userDetailService.save(userDetail);
     }
 
-    //查询
+    //查询用户详情
     @RequestMapping("userdetailbyuid.do")
     public UserDetail getSingle(HttpServletRequest request) {
         String token = TokenTool.getToken(request);

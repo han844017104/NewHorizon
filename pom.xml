@@ -18,7 +18,7 @@
         <module>NewHorizon_FDFSController</module>
         <module>NewHorizon_UserService</module>
         <module>NewHorizon_UserProvider</module>
-        <module>NewHorizon_WebController</module>
+        <module>NewHorizon_UserController</module>
     </modules>
 
     <!--jar依赖的版本号-->

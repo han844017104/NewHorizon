@@ -13,5 +13,5 @@ public interface UserAddrMapper {
 
     int updateByPrimaryKeySelective(UserAddr record);
 
-    int updateByPrimaryKey(UserAddr record);
+    int updateById(UserAddr record);
 }

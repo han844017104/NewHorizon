@@ -4,7 +4,7 @@ import com.qfedu.newhorizon.domain.user.UserDetail;
 import com.qfedu.newhorizon.common.result.RO;
 
 public interface UserDetailService {
-    RO saveDetail(UserDetail userDetail);
+    RO save(UserDetail userDetail);
 
     UserDetail queryByUid(int uid);
 }

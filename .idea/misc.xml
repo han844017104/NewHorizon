@@ -4,6 +4,7 @@
     <file type="web" url="file://$PROJECT_DIR$/NewHorizon_FDFSController" />
     <file type="web" url="file://$PROJECT_DIR$/NewHorizon_SSOController" />
     <file type="web" url="file://$PROJECT_DIR$/NewHorizon_SSOProvider" />
+    <file type="web" url="file://$PROJECT_DIR$/NewHorizon_UserController" />
     <file type="web" url="file://$PROJECT_DIR$/NewHorizon_UserProvider" />
     <file type="web" url="file://$PROJECT_DIR$/NewHorizon_WebController" />
   </component>
@@ -11,11 +12,12 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/NewHorizon_Common/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
-        <option value="$PROJECT_DIR$/NewHorizon_UserService/pom.xml" />
+        <option value="$PROJECT_DIR$/NewHorizon_WebController/pom.xml" />
       </set>
     </option>
   </component>

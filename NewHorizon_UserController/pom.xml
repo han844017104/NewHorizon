@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>NewHorizon_WebController</artifactId>
+    <artifactId>NewHorizon_UserController</artifactId>
     <packaging>war</packaging>
 
     <dependencies>
@@ -26,6 +26,5 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
-
 
 </project>

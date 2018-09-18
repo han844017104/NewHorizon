@@ -13,9 +13,9 @@
         <module name="NewHorizon_SSOController" />
         <module name="NewHorizon_SSOProvider" />
         <module name="NewHorizon_SSOService" />
+        <module name="NewHorizon_UserController" />
         <module name="NewHorizon_UserProvider" />
         <module name="NewHorizon_UserService" />
-        <module name="NewHorizon_WebController" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -27,6 +27,7 @@
       <module name="NewHorizon_SSOController" target="1.8" />
       <module name="NewHorizon_SSOProvider" target="1.8" />
       <module name="NewHorizon_SSOService" target="1.8" />
+      <module name="NewHorizon_UserController" target="1.8" />
       <module name="NewHorizon_UserProvider" target="1.8" />
       <module name="NewHorizon_UserService" target="1.8" />
       <module name="NewHorizon_WebController" target="1.8" />

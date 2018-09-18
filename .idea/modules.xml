@@ -10,9 +10,9 @@
       <module fileurl="file://$PROJECT_DIR$/NewHorizon_SSOController/NewHorizon_SSOController.iml" filepath="$PROJECT_DIR$/NewHorizon_SSOController/NewHorizon_SSOController.iml" />
       <module fileurl="file://$PROJECT_DIR$/NewHorizon_SSOProvider/NewHorizon_SSOProvider.iml" filepath="$PROJECT_DIR$/NewHorizon_SSOProvider/NewHorizon_SSOProvider.iml" />
       <module fileurl="file://$PROJECT_DIR$/NewHorizon_SSOService/NewHorizon_SSOService.iml" filepath="$PROJECT_DIR$/NewHorizon_SSOService/NewHorizon_SSOService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NewHorizon_UserController/NewHorizon_UserController.iml" filepath="$PROJECT_DIR$/NewHorizon_UserController/NewHorizon_UserController.iml" />
       <module fileurl="file://$PROJECT_DIR$/NewHorizon_UserProvider/NewHorizon_UserProvider.iml" filepath="$PROJECT_DIR$/NewHorizon_UserProvider/NewHorizon_UserProvider.iml" />
       <module fileurl="file://$PROJECT_DIR$/NewHorizon_UserService/NewHorizon_UserService.iml" filepath="$PROJECT_DIR$/NewHorizon_UserService/NewHorizon_UserService.iml" />
-      <module fileurl="file://$PROJECT_DIR$/NewHorizon_WebController/NewHorizon_WebController.iml" filepath="$PROJECT_DIR$/NewHorizon_WebController/NewHorizon_WebController.iml" />
     </modules>
   </component>
 </project>
