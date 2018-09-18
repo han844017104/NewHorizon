@@ -1,7 +1,6 @@
 package com.qfedu.newhorizon.controller.user;
 
 import com.qfedu.newhorizon.common.result.R;
-import com.qfedu.newhorizon.domain.user.User;
 import com.qfedu.newhorizon.domain.user.UserMain;
 import com.qfedu.newhorizon.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +23,7 @@ public class UserController {
     @RequestMapping("/register.do")
     public R register(String username,String password){
         UserMain userMain = new UserMain();
-        userMain.setUsername(username);
+        userMain.setUsername(username.trim());
         userMain.setPassword(password);
         return userService.register(userMain);
     }

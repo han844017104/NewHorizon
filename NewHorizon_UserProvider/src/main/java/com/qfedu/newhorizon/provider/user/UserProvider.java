@@ -7,6 +7,8 @@ import com.qfedu.newhorizon.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
+
 /**
  * @Auther: Kam
  * @Date: 下午 7:37 2018-09-17
@@ -24,6 +26,16 @@ public class UserProvider implements UserService {
 
     @Override
     public R register(UserMain user) {
-        return userMapper.insert(user)>0?R.OK():R.ERROR();
+        if(user!=null){
+            if (user.getUsername()!=null&& Objects.equals(user.getUsername(),"")) {
+                //用户名不为空
+                UserMain userMain = userMapper.selectByUsername(user.getUsername());
+                if(userMain==null){
+                    //为null，可以注册
+                    return userMapper.insert(user)>0?R.OK():R.ERROR();
+                }
+            }
+        }
+       return R.ERROR();
     }
 }
