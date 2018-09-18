@@ -11,21 +11,22 @@
     <result column="flag" property="flag" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-    
-    uid, username, tel, password, nickname, maketime, flag
+    UID, USERNAME, TEL, PASSWORD, NICKNAME, MAKETIME, FLAG
   </sql>
   <insert id="insert" parameterType="com.qfedu.newhorizon.domain.user.UserMain" >
     <selectKey resultType="java.lang.Integer" keyProperty="uid" order="AFTER" >
       SELECT LAST_INSERT_ID()
     </selectKey>
-    insert into web_user (username, tel, password, 
-      nickname, maketime, flag
+    INSERT INTO WEB_USER (USERNAME, TEL, PASSWORD,
+      NICKNAME, MAKETIME, FLAG
       )
-    values (#{username,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+    VALUES (#{username,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
       #{nickname,jdbcType=VARCHAR}, now(), #{flag,jdbcType=INTEGER}
       )
   </insert>
   <select id="selectByUsername" resultType="com.qfedu.newhorizon.domain.user.UserMain">
-    select * from web_user where username = #{username}
+    SELECT
+    <include refid="Base_Column_List"></include>
+    FROM WEB_USER WHERE USERNAME = #{username}
   </select>
 </mapper>
