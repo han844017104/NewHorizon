@@ -22,6 +22,9 @@
         <module>NewHorizon_NewsService</module>
         <module>NewHorizon_NewsProvider</module>
         <module>NewHorizon_NewsController</module>
+        <module>NewHorizon_PingLunService</module>
+        <module>NewHorizon_PingLunProvider</module>
+        <module>NewHorizon_PingLunController</module>
     </modules>
 
     <!--jar依赖的版本号-->
