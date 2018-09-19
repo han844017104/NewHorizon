@@ -43,10 +43,13 @@
             <result column="fatherid" property="fatherid" jdbcType="INTEGER" />
             <result column="flag" property="flag" jdbcType="INTEGER" />
         </collection>
+        <association property=""
     </resultMap>
     
     <select id="selectNewDetail" resultMap="ResultMapWithBLOBs">
         /*SELECT N.TITLE, N.TEXT, N.CREATTIME, COUNT(*)
+         FROM T_NEWS N LEFT OUTER JOIN T_PINGLUN P ON P.NID=N.NID WHERE P.NID=#{N.NID}*/
+           /*SELECT N.TITLE, N.TEXT, N.CREATTIME, COUNT(*)
          FROM T_NEWS N LEFT OUTER JOIN T_PINGLUN P ON P.NID=N.NID WHERE P.NID=#{N.NID}*/
          SELECT N.TITLE, N.TEXT, N.CREATTIME, COUNT(*) FROM T_NEWS N, T_PINGLUN P WHERE P.NID=N.NID AND N.NID=#{N.NID};
     </select>
