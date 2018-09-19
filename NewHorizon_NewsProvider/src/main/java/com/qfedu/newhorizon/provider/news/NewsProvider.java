@@ -5,6 +5,7 @@ import com.qfedu.newhorizon.common.result.PageVo;
 import com.qfedu.newhorizon.common.result.R;
 import com.qfedu.newhorizon.common.result.TypeVo;
 import com.qfedu.newhorizon.domain.news.New;
+
 import com.qfedu.newhorizon.domain.newtype.NewTypeMain;
 import com.qfedu.newhorizon.mapper.news.NewMapper;
 import com.qfedu.newhorizon.mapper.newtype.NewTypeMapper;
@@ -94,6 +95,7 @@ public class NewsProvider implements NewsService {
     //一级分类
     @Override
     public R selectFather() {
+
         List<NewTypeMain> newTypeMains = newTypeMapper.selectAllFather();
         if(newTypeMains != null && newTypeMains.size() > 0){
             return new R(0,"ok",newTypeMains);

@@ -10,7 +10,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service("AddressServiceProvider")
+
+@Service
 public class AddressProvider implements AddressService {
     @Autowired
     private ProvinceMapper provinceMapper;
@@ -23,7 +24,8 @@ public class AddressProvider implements AddressService {
     }
 
     @Override
-    public List<City> queryByPid(int pid) {
+    public List<City> queryByPid(Integer pid) {
+
         return cityMapper.selectByPid(pid);
     }
 }

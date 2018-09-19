@@ -1,6 +1,10 @@
 package com.qfedu.newhorizon.domain.user;
 
-public class City {
+
+import java.io.Serializable;
+
+public class City implements Serializable {
+
     private Integer id;
 
     private String cname;

@@ -1,5 +1,10 @@
 package com.qfedu.newhorizon.controller.news;
 
+
+import com.qfedu.newhorizon.service.news.NewsService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
 import com.qfedu.newhorizon.common.result.R;
 import com.qfedu.newhorizon.service.news.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,10 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+
 /**
  * 　　　Create   By   Mr.Han
  * 　                 　　　　　------   On   2018/9/18  17:04
  */
+
 @RestController
 public class NewsController {
 
@@ -68,4 +75,5 @@ public class NewsController {
     public R queryallfathertype(){
         return service.selectFather();
     }
+
 }

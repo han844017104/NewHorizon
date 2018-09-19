@@ -18,4 +18,5 @@ public interface NewMapper {
     New selectById(Integer nid);
 
     New selectNewDetail(Integer nid);
+
 }
