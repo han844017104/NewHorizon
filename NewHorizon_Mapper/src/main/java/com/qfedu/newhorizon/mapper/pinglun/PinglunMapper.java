@@ -1,6 +1,9 @@
 package com.qfedu.newhorizon.mapper.pinglun;
 
 import com.qfedu.newhorizon.domain.pinglun.Pinglun;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface PinglunMapper {
     int deleteByPrimaryKey(Integer plid);
@@ -14,4 +17,7 @@ public interface PinglunMapper {
     int updateByPrimaryKeySelective(Pinglun record);
 
     int updateByPrimaryKey(Pinglun record);
+
+    List<Pinglun> selectByPage(@Param("nid") Integer nid,@Param("index") Integer index,@Param("limit") Integer limit);
+
 }

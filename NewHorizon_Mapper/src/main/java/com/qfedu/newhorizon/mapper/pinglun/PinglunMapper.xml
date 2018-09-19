@@ -20,6 +20,13 @@
     from t_pinglun
     where plid = #{plid,jdbcType=INTEGER}
   </select>
+
+
+  <select id="selectByPage" resultType="com.qfedu.newhorizon.domain.pinglun.Pinglun">
+      select <include refid="Base_Column_List"></include> from t_pinglun where nid=#{nid} order by addtime limit #{index},#{limit};
+  </select>
+
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from t_pinglun
     where plid = #{plid,jdbcType=INTEGER}
@@ -32,7 +39,7 @@
       addtime, type, fatherid, 
       flag)
     values (#{uid,jdbcType=INTEGER}, #{nid,jdbcType=INTEGER}, #{text,jdbcType=VARCHAR}, 
-      #{addtime,jdbcType=TIMESTAMP}, #{type,jdbcType=INTEGER}, #{fatherid,jdbcType=INTEGER}, 
+      now(), #{type,jdbcType=INTEGER}, #{fatherid,jdbcType=INTEGER},
       #{flag,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.qfedu.newhorizon.domain.pinglun.Pinglun" >
