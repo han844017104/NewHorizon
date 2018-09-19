@@ -12,5 +12,5 @@
     <!--3、配置协议-->
     <dubbo:protocol name="dubbo" port="20883"  ></dubbo:protocol>
     <!--4、配置消费服务-->
-    <dubbo:reference interface="com.qfedu.newhorizon.service.pinglun.PingLunService" id="pingLunService" retries="0" timeout="20000"></dubbo:reference>
+    <dubbo:reference interface="com.qfedu.newhorizon.service.pinglun.PingLunService" id="pingLunProvider" retries="0" timeout="20000"></dubbo:reference>
 </beans>
