@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qfedu.newhorizon.mapper.newtype.NewTypeMapper" >
+  <resultMap id="BaseResultMap" type="com.qfedu.newhorizon.domain.newtype.NewType" >
+    <id column="typeid" property="typeid" jdbcType="INTEGER" />
+    <result column="typename" property="typename" jdbcType="VARCHAR" />
+    <result column="leave" property="leave" jdbcType="INTEGER" />
+    <result column="fatherid" property="fatherid" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    typeid, typename, leave, fatherid
+  </sql>
+  <select id="selectAll" resultType="com.qfedu.newhorizon.domain.newtype.NewTypeMain">
+    select * from t_newstype;
+  </select>
+  <select id="selectFather" resultType="com.qfedu.newhorizon.domain.newtype.NewTypeMain">
+    select * from t_newstype where leave=-1
+  </select>
+</mapper>
