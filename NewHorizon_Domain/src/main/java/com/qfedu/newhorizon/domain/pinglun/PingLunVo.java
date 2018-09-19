@@ -20,8 +20,6 @@ public class PingLunVo extends Pinglun{
 
     private Date addtime;
 
-    private Integer type;
-
     private Integer fatherid;
 
     private Integer like;
@@ -48,14 +46,6 @@ public class PingLunVo extends Pinglun{
 
     public void setAddtime(Date addtime) {
         this.addtime = addtime;
-    }
-
-    public Integer getType() {
-        return type;
-    }
-
-    public void setType(Integer type) {
-        this.type = type;
     }
 
     public Integer getFatherid() {
