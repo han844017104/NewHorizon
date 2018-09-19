@@ -7,5 +7,5 @@ public interface UserAddrService {
 
     int query(UserAddr userAddr);
 
-    UserAddr select(Integer uid);
+    UserAddr select(int uid);
 }

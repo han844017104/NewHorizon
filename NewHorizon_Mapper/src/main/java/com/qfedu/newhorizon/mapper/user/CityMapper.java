@@ -18,5 +18,4 @@ public interface CityMapper {
     int updateByPrimaryKey(City record);
 
     List<City> selectByPid(Integer pid);
-
 }

@@ -6,7 +6,7 @@ import com.qfedu.newhorizon.service.user.UserAddrService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("UserAddrServiceProvider")
 public class UserAddrProvider implements UserAddrService {
     @Autowired
     private UserAddrMapper userAddrMapper;
@@ -22,10 +22,7 @@ public class UserAddrProvider implements UserAddrService {
     }
 
     @Override
-    public UserAddr select(Integer uid) {
-        if(uid!=null){
-            return userAddrMapper.selectByUid(uid);
-        }
-        return null;
+    public UserAddr select(int uid) {
+        return userAddrMapper.selectByUid(uid);
     }
 }

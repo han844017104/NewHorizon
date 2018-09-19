@@ -1,8 +1,6 @@
 package com.qfedu.newhorizon.domain.user;
 
-import java.io.Serializable;
-
-public class Province implements Serializable {
+public class Province {
     private Integer id;
 
     private String pname;

@@ -2,7 +2,6 @@ package com.qfedu.newhorizon.controller.user;
 
 import com.alibaba.fastjson.JSON;
 import com.qfedu.newhorizon.common.redis.RedisUtil;
-import com.qfedu.newhorizon.common.result.R;
 import com.qfedu.newhorizon.common.tools.TokenTool;
 import com.qfedu.newhorizon.domain.user.User;
 import com.qfedu.newhorizon.domain.user.UserAddr;
@@ -22,19 +21,16 @@ public class UserAddrController {
     private RedisUtil redisUtil;
 
     @RequestMapping("useraddrsave.do")
-    public R save(UserAddr userAddr) {
-        if(userAddr!=null){
-            return new R(0,"success",userAddrService.save(userAddr));
-        }
-       return R.ERROR();
+    public int save(UserAddr userAddr) {
+        return userAddrService.save(userAddr);
     }
 
     @RequestMapping("useraddrupdate.do")
-    public R update(HttpServletRequest request) {
+    public int update(HttpServletRequest request) {
         String tokren = TokenTool.getToken(request);
         String json = (String) redisUtil.get(tokren);
         User user = JSON.parseObject(json, UserMain.class);
         UserAddr userAddr = userAddrService.select(user.getUid());
-        return new R(0,"success",userAddrService.query(userAddr)) ;
+        return userAddrService.query(userAddr);
     }
 }

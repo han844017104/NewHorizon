@@ -175,11 +175,6 @@
             <artifactId>activemq-spring</artifactId>
             <version>5.15.2</version>
         </dependency>
-        <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-api</artifactId>
-            <version>7.0</version>
-        </dependency>
 
         <dependency>
             <groupId>com.qfedu</groupId>
