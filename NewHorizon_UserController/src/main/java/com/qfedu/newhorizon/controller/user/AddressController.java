@@ -1,5 +1,6 @@
 package com.qfedu.newhorizon.controller.user;
 
+import com.qfedu.newhorizon.common.result.R;
 import com.qfedu.newhorizon.domain.user.City;
 import com.qfedu.newhorizon.domain.user.Province;
 import com.qfedu.newhorizon.service.user.AddressService;
@@ -15,12 +16,15 @@ public class AddressController {
     private AddressService addressService;
 
     @RequestMapping("provincelist.do")
-    public List<Province> queryAll() {
-        return addressService.queryAll();
+    public R queryAll() {
+        return new R(1000,"success",addressService.queryAll());
     }
 
     @RequestMapping("citylist.do")
-    public List<City> queryCity(int pid) {
-        return addressService.queryByPid(pid);
+    public R queryCity(Integer pid) {
+        if(pid!=null){
+            return new R (0,"success",addressService.queryByPid(pid));
+        }
+      return R.ERROR();
     }
 }

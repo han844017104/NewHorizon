@@ -5,6 +5,7 @@
     <id column="nid" property="nid" jdbcType="INTEGER" />
     <result column="title" property="title" jdbcType="VARCHAR" />
     <result column="creattime" property="creattime" jdbcType="TIMESTAMP" />
+    <result column="tid" property="tid" jdbcType="INTEGER" />
     <result column="type" property="type" jdbcType="INTEGER" />
     <result column="flag" property="flag" jdbcType="INTEGER" />
   </resultMap>
@@ -12,20 +13,22 @@
     <result column="text" property="text" jdbcType="LONGVARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    nid, title, creattime, type, flag
+    nid, title, tid, creattime, type, flag
   </sql>
   <sql id="Blob_Column_List" >
     text
   </sql>
 
-  <select id="selectByType" parameterType="java.lang.Integer" resultType="com.qfedu.newhorizon.domain.news">
-    select * from t_news where type = #{type}
+  <select id="selectByType" parameterType="java.lang.Integer" resultType="com.qfedu.newhorizon.domain.news.NewPage">
+    select nid,title from t_news where type = #{type} and flag = 0
   </select>
 
-  <select id="selectByPage" resultType="com.qfedu.newhorizon.domain.news.New">
-
+  <select id="selectByPage" resultType="com.qfedu.newhorizon.domain.news.NewPage">
+      select nid,title from t_news where type = #{type} and flag = 0 limit page,limit
   </select>
 
-
+  <select id="selectById" resultType="com.qfedu.newhorizon.domain.news.NewMain">
+    select * from t_news where nid = #{nid}
+  </select>
 
 </mapper>
