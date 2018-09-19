@@ -8,12 +8,12 @@ import com.qfedu.newhorizon.domain.user.UserAddr;
 import com.qfedu.newhorizon.domain.user.UserMain;
 import com.qfedu.newhorizon.service.user.UserAddrService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 
-@RestController
+@Controller
 public class UserAddrController {
     @Autowired
     private UserAddrService userAddrService;
