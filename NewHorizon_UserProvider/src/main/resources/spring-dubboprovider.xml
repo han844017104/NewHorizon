@@ -13,4 +13,8 @@ http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubb
     <dubbo:protocol name="dubbo" port="20881"></dubbo:protocol>
     <!--4、设置发布的服务-->
     <dubbo:service interface="com.qfedu.newhorizon.service.user.UserService" ref="userProvider" retries="0" timeout="20000"></dubbo:service>
+    <dubbo:service interface="com.qfedu.newhorizon.service.user.UserDetailService" ref="userDetailProvider" retries="0" timeout="20000"></dubbo:service>
+    <dubbo:service interface="com.qfedu.newhorizon.service.user.AddressService" ref="addressProvider" retries="0" timeout="20000"></dubbo:service>
+    <dubbo:service interface="com.qfedu.newhorizon.service.user.UserAddrService" ref="userAddrProvider" retries="0" timeout="20000"></dubbo:service>
+
 </beans>

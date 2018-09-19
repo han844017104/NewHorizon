@@ -16,4 +16,7 @@ public interface NewMapper {
     PageVo selectByPage(@Param("page")Integer page,@Param("limit")Integer limit,@Param("type")Integer type);
 
     New selectById(Integer nid);
+
+    New selectNewDetail(Integer nid);
+
 }

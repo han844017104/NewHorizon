@@ -24,8 +24,4 @@
         <url-pattern>*.do</url-pattern>
     </servlet-mapping>
 
-    <filter-mapping>
-        <filter-name>CrosFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
 </web-app>
