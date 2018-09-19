@@ -1,12 +1,7 @@
 package com.qfedu.newhorizon.service.news;
 
-import com.qfedu.newhorizon.common.result.PageVo;
 import com.qfedu.newhorizon.common.result.R;
-import com.qfedu.newhorizon.domain.news.New;
-import com.qfedu.newhorizon.domain.newtype.NewType;
 import org.apache.ibatis.annotations.Param;
-
-import java.util.List;
 
 /**
  * 　　　Create   By   Mr.Han
@@ -22,4 +17,6 @@ public interface NewsService {
     R selectAll();
 
     R selectFather();
+
+    R selectNewDetail(Integer nid);
 }

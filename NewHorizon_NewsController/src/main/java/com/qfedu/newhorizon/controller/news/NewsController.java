@@ -44,11 +44,11 @@ public class NewsController {
     /**
      * 查询新闻详情
      * @param nid 新闻id
-     * @return
+     * @return 返回分装好的新闻详情
      */
     @RequestMapping("/querynewdetail.do")
     public R querynewdetail(Integer nid){
-       return service.selectById(nid);
+       return service.selectNewDetail(nid);
     }
 
     /**

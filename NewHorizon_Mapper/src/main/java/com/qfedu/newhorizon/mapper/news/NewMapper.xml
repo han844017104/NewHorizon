@@ -1,34 +1,54 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.qfedu.newhorizon.mapper.news.NewMapper" >
-  <resultMap id="BaseResultMap" type="com.qfedu.newhorizon.domain.news.New" >
-    <id column="nid" property="nid" jdbcType="INTEGER" />
-    <result column="title" property="title" jdbcType="VARCHAR" />
-    <result column="creattime" property="creattime" jdbcType="TIMESTAMP" />
-    <result column="tid" property="tid" jdbcType="INTEGER" />
-    <result column="type" property="type" jdbcType="INTEGER" />
-    <result column="flag" property="flag" jdbcType="INTEGER" />
-  </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="com.qfedu.newhorizon.domain.news.New" extends="BaseResultMap" >
-    <result column="text" property="text" jdbcType="LONGVARCHAR" />
-  </resultMap>
-  <sql id="Base_Column_List" >
-    nid, title, tid, creattime, type, flag
-  </sql>
-  <sql id="Blob_Column_List" >
-    text
-  </sql>
+    <resultMap id="BaseResultMap" type="com.qfedu.newhorizon.domain.news.New" >
+        <id column="nid" property="nid" jdbcType="INTEGER" />
+        <result column="title" property="title" jdbcType="VARCHAR" />
+        <result column="creattime" property="creattime" jdbcType="TIMESTAMP" />
+        <result column="tid" property="tid" jdbcType="INTEGER" />
+        <result column="type" property="type" jdbcType="INTEGER" />
+        <result column="flag" property="flag" jdbcType="INTEGER" />
+    </resultMap>
+    <resultMap id="ResultMapWithBLOBs" type="com.qfedu.newhorizon.domain.news.New" extends="BaseResultMap" >
+        <result column="text" property="text" jdbcType="LONGVARCHAR" />
+    </resultMap>
+    <sql id="Base_Column_List" >
+       nid, title, tid, creattime, type, flag
+    </sql>
+    <sql id="Blob_Column_List" >
+       text
+    </sql>
 
-  <select id="selectByType" parameterType="java.lang.Integer" resultType="com.qfedu.newhorizon.domain.news.NewPage">
-    select nid,title from t_news where type = #{type} and flag = 0
-  </select>
+    <select id="selectByType" parameterType="java.lang.Integer" resultType="com.qfedu.newhorizon.domain.news.NewPage">
+        select nid,title from t_news where type = #{type} and flag = 0
+    </select>
 
-  <select id="selectByPage" resultType="com.qfedu.newhorizon.domain.news.NewPage">
-      select nid,title from t_news where type = #{type} and flag = 0 limit page,limit
-  </select>
+    <select id="selectByPage" resultType="com.qfedu.newhorizon.domain.news.NewPage">
+         select nid,title from t_news where type = #{type} and flag = 0 limit page,limit
+    </select>
 
-  <select id="selectById" resultType="com.qfedu.newhorizon.domain.news.NewMain">
-    select * from t_news where nid = #{nid}
-  </select>
+    <select id="selectById" resultType="com.qfedu.newhorizon.domain.news.NewMain">
+        select * from t_news where nid = #{nid}
+    </select>
+
+    <resultMap id="ResultMapWithBLOBs" type="com.qfedu.newhorizon.domain.news.New" extends="BaseResultMap" >
+        <result column="text" property="text" jdbcType="LONGVARCHAR" />
+        <collection property="pingLuns" ofType="com.qfedu.newhorizon.domain.pinglun.PingLunMain">
+            <id column="plid" property="plid" jdbcType="INTEGER" />
+            <result column="uid" property="uid" jdbcType="INTEGER" />
+            <result column="nid" property="nid" jdbcType="INTEGER" />
+            <result column="text" property="text" jdbcType="VARCHAR" />
+            <result column="addtime" property="addtime" jdbcType="TIMESTAMP" />
+            <result column="type" property="type" jdbcType="INTEGER" />
+            <result column="fatherid" property="fatherid" jdbcType="INTEGER" />
+            <result column="flag" property="flag" jdbcType="INTEGER" />
+        </collection>
+    </resultMap>
+    
+    <select id="selectNewDetail" resultMap="ResultMapWithBLOBs">
+        /*SELECT N.TITLE, N.TEXT, N.CREATTIME, COUNT(*)
+         FROM T_NEWS N LEFT OUTER JOIN T_PINGLUN P ON P.NID=N.NID WHERE P.NID=#{N.NID}*/
+         SELECT N.TITLE, N.TEXT, N.CREATTIME, COUNT(*) FROM T_NEWS N, T_PINGLUN P WHERE P.NID=N.NID AND N.NID=#{N.NID};
+    </select>
 
 </mapper>

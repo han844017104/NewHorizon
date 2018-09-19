@@ -1,6 +1,9 @@
 package com.qfedu.newhorizon.domain.news;
 
+import com.qfedu.newhorizon.domain.pinglun.PingLunMain;
+
 import java.util.Date;
+import java.util.List;
 
 /**
  * 　　　Create   By   Mr.Han
@@ -18,6 +21,16 @@ public class NewMain extends New{
     private Integer flag;
 
     private String text;
+
+    private List<PingLunMain> pingLuns;
+
+    public List<PingLunMain> getPingLuns() {
+        return pingLuns;
+    }
+
+    public void setPingLuns(List<PingLunMain> pingLuns) {
+        this.pingLuns = pingLuns;
+    }
 
     public String getTitle() {
         return title;
