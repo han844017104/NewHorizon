@@ -9,4 +9,5 @@ public interface AddressService {
     List<Province> queryAll();
 
     List<City> queryByPid(Integer pid);
+
 }

@@ -22,6 +22,7 @@ public class EncodeFilter implements Filter {
         httpServletRequest.setCharacterEncoding("UTF-8");
         httpServletResponse.setCharacterEncoding("UTF-8");
         httpServletResponse.setContentType("text/html;charset=UTF-8");
+
         chain.doFilter(request,response);
     }
     @Override

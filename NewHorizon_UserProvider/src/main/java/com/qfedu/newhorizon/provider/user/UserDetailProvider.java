@@ -1,6 +1,7 @@
 package com.qfedu.newhorizon.provider.user;
 
 import com.qfedu.newhorizon.common.result.R;
+
 import com.qfedu.newhorizon.common.result.RO;
 import com.qfedu.newhorizon.domain.user.UserDetail;
 import com.qfedu.newhorizon.mapper.user.UserDetailMapper;

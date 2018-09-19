@@ -13,7 +13,9 @@
   <select id="selectAll" resultType="com.qfedu.newhorizon.domain.newtype.NewTypeMain">
     select * from t_newstype;
   </select>
-  <select id="selectFather" resultType="com.qfedu.newhorizon.domain.newtype.NewTypeMain">
+
+  <select id="selectAllFather" resultType="com.qfedu.newhorizon.domain.newtype.NewTypeMain">
+
     select * from t_newstype where leave=-1
   </select>
 </mapper>

@@ -10,4 +10,7 @@ public interface NewTypeMapper {
     List<NewTypeMain> selectAll();
     //一级分类
     List<NewTypeMain> selectFather();
+
+    List<NewTypeMain> selectAllFather();
+
 }

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qfedu.newhorizon.mapper.pinglun.PinglunMapper" >
+  <resultMap id="BaseResultMap" type="com.qfedu.newhorizon.domain.pinglun.PingLunMain" >
+    <id column="plid" property="plid" jdbcType="INTEGER" />
+    <result column="uid" property="uid" jdbcType="INTEGER" />
+    <result column="nid" property="nid" jdbcType="INTEGER" />
+    <result column="text" property="text" jdbcType="VARCHAR" />
+    <result column="addtime" property="addtime" jdbcType="TIMESTAMP" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="fatherid" property="fatherid" jdbcType="INTEGER" />
+    <result column="flag" property="flag" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    plid, uid, nid, text, addtime, type, fatherid, flag
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_pinglun
+    where plid = #{plid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_pinglun
+    where plid = #{plid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qfedu.newhorizon.domain.pinglun.Pinglun" >
+    <selectKey resultType="java.lang.Integer" keyProperty="plid" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_pinglun (uid, nid, text, 
+      addtime, type, fatherid, 
+      flag)
+    values (#{uid,jdbcType=INTEGER}, #{nid,jdbcType=INTEGER}, #{text,jdbcType=VARCHAR}, 
+      #{addtime,jdbcType=TIMESTAMP}, #{type,jdbcType=INTEGER}, #{fatherid,jdbcType=INTEGER}, 
+      #{flag,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qfedu.newhorizon.domain.pinglun.Pinglun" >
+    <selectKey resultType="java.lang.Integer" keyProperty="plid" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_pinglun
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="uid != null" >
+        uid,
+      </if>
+      <if test="nid != null" >
+        nid,
+      </if>
+      <if test="text != null" >
+        text,
+      </if>
+      <if test="addtime != null" >
+        addtime,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="fatherid != null" >
+        fatherid,
+      </if>
+      <if test="flag != null" >
+        flag,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="uid != null" >
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="nid != null" >
+        #{nid,jdbcType=INTEGER},
+      </if>
+      <if test="text != null" >
+        #{text,jdbcType=VARCHAR},
+      </if>
+      <if test="addtime != null" >
+        #{addtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="fatherid != null" >
+        #{fatherid,jdbcType=INTEGER},
+      </if>
+      <if test="flag != null" >
+        #{flag,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qfedu.newhorizon.domain.pinglun.Pinglun" >
+    update t_pinglun
+    <set >
+      <if test="uid != null" >
+        uid = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="nid != null" >
+        nid = #{nid,jdbcType=INTEGER},
+      </if>
+      <if test="text != null" >
+        text = #{text,jdbcType=VARCHAR},
+      </if>
+      <if test="addtime != null" >
+        addtime = #{addtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="fatherid != null" >
+        fatherid = #{fatherid,jdbcType=INTEGER},
+      </if>
+      <if test="flag != null" >
+        flag = #{flag,jdbcType=INTEGER},
+      </if>
+    </set>
+    where plid = #{plid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qfedu.newhorizon.domain.pinglun.Pinglun" >
+    update t_pinglun
+    set uid = #{uid,jdbcType=INTEGER},
+      nid = #{nid,jdbcType=INTEGER},
+      text = #{text,jdbcType=VARCHAR},
+      addtime = #{addtime,jdbcType=TIMESTAMP},
+      type = #{type,jdbcType=INTEGER},
+      fatherid = #{fatherid,jdbcType=INTEGER},
+      flag = #{flag,jdbcType=INTEGER}
+    where plid = #{plid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -27,5 +27,6 @@ public class UserAddrProvider implements UserAddrService {
             return userAddrMapper.selectByUid(uid);
         }
         return null;
+
     }
 }

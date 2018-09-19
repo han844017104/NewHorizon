@@ -1,9 +1,11 @@
 package com.qfedu.newhorizon.domain.user;
 
+
 import java.io.Serializable;
 import java.util.Date;
 
 public class UserDetail implements Serializable {
+
     private Integer id;
 
     private Integer uid;

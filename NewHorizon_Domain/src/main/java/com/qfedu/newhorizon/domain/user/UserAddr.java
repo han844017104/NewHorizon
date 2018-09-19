@@ -1,8 +1,10 @@
 package com.qfedu.newhorizon.domain.user;
 
+
 import java.io.Serializable;
 
 public class UserAddr  implements Serializable {
+
     private Integer id;
 
     private Integer uid;
