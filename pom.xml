@@ -28,6 +28,9 @@
         <module>NewHorizon_SearchService</module>
         <module>NewHorizon_SearchProvider</module>
         <module>NewHorizon_SearchController</module>
+        <module>NewHorizon_QuartzService</module>
+        <module>NewHorizon_QuartzProvider</module>
+        <module>NewHorizon_QuartzController</module>
     </modules>
 
     <!--jar依赖的版本号-->
