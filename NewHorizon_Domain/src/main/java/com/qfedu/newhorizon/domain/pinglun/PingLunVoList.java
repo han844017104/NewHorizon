@@ -11,4 +11,20 @@ public class PingLunVoList {
     private PingLunVo pinglun;
 
     private List<PingLunVo> fathers;
+
+    public PingLunVo getPinglun() {
+        return pinglun;
+    }
+
+    public void setPinglun(PingLunVo pinglun) {
+        this.pinglun = pinglun;
+    }
+
+    public List<PingLunVo> getFathers() {
+        return fathers;
+    }
+
+    public void setFathers(List<PingLunVo> fathers) {
+        this.fathers = fathers;
+    }
 }
