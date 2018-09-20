@@ -27,6 +27,9 @@ public class PingLunProvider implements PingLunService {
 
     @Override
     public List<Pinglun> selectNewPinglun(Integer nid,Integer page,Integer limit) {
+        if(nid==null||page==null||limit==null){
+            return null;
+        }
         limit = 20;
         int index = 0;
         index = (page-1)*limit;
@@ -36,6 +39,9 @@ public class PingLunProvider implements PingLunService {
 
     @Override
     public R addLike(Integer uid, Integer plid) {
+        if(uid==null||plid==null){
+            return R.ERROR();
+        }
         Pinglun pinglun = new PingLunMain();
         ((PingLunMain) pinglun).setFatherid(plid);
         ((PingLunMain) pinglun).setType(2);
