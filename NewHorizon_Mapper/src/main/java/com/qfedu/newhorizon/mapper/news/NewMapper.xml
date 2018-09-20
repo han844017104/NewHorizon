@@ -52,4 +52,8 @@
          SELECT N.TITLE, N.TEXT, N.CREATTIME, COUNT(*) FROM T_NEWS N, T_PINGLUN P WHERE P.NID=N.NID AND N.NID=#{N.NID};
     </select>
 
+    <select id="selectByHotTen" resultType="com.qfedu.newhorizon.domain.news.NewESVO">
+        SELECT n.nid as nid,n.title as title FROM t_news n LEFT JOIN t_newclick nc ON n.nid = nc.nid ORDER BY ( SELECT COUNT(nid ) as clicknum FROM t_newclick GROUP BY nid) DESC limit 0,10;
+    </select>
+
 </mapper>

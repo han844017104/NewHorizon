@@ -24,7 +24,7 @@ public class PingLunController {
     @Autowired
     private PingLunService service;
 
-    @RequestMapping("/selectlike.do")
+    @RequestMapping("/querypinglun.do")
     public R selectnewpinglun(Integer nid, Integer page, Integer limit) {
         List<Pinglun> pingluns = service.selectNewPinglun(nid, page, limit);
         return pingluns!=null? new R(0, "success",pingluns ):R.ERROR();
@@ -51,5 +51,11 @@ public class PingLunController {
     @RequestMapping("/querynew.do")
     public R querynew(Integer nid, @RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "3") Integer limit){
         return service.selectNew(nid,page,limit);
+    }
+
+    //评论回复
+    @RequestMapping("/addpinglunreply.do")
+    public R addReply(PingLunMain pingLunMain){
+        return service.addReply(pingLunMain);
     }
 }

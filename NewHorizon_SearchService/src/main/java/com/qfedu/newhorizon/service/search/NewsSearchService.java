@@ -12,4 +12,5 @@ public interface NewsSearchService {
 
     List<NewESVO> queryByName(String name);
 
+    List<NewESVO> queryOnceClike();
 }

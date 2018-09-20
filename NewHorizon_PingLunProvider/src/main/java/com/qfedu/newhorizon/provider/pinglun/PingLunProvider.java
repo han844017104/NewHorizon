@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * 　　　Create   By   Mr.Han
@@ -73,5 +74,30 @@ public class PingLunProvider implements PingLunService {
         }
         return R.ERROR();
 
+    }
+
+    /**
+     * 评论回复
+     * @param pingLunMain 评论主体
+     * @return R
+     */
+    @Override
+    public R addReply(PingLunMain pingLunMain) {
+        if(pingLunMain!=null){
+            if(pingLunMain.getFatherid()!=null){
+                //有父
+                if(pingLunMain.getUid()!=null){
+                    //该用户已登录
+                    if(pingLunMain.getText()!=null&& Objects.equals("",pingLunMain.getText())){
+                        //评论有内容
+                        return new R(0,"success",mapper.insert(pingLunMain));
+                    }
+
+                }
+
+            }
+
+        }
+        return R.ERROR();
     }
 }
