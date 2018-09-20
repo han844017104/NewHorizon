@@ -19,6 +19,7 @@
 
 
     <mvc:annotation-driven></mvc:annotation-driven>
+
     <!--放行静态资源 -->
     <mvc:default-servlet-handler/>
     <bean id="multipartResolver"

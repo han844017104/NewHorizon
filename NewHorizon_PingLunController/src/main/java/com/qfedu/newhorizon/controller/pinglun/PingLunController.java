@@ -1,5 +1,6 @@
 package com.qfedu.newhorizon.controller.pinglun;
 
+import com.qfedu.newhorizon.common.result.PageVo;
 import com.qfedu.newhorizon.common.result.R;
 
 import com.qfedu.newhorizon.domain.pinglun.PingLunMain;
@@ -49,7 +50,7 @@ public class PingLunController {
 
 
     @RequestMapping("/querynew.do")
-    public R querynew(Integer nid, @RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "3") Integer limit){
+    public PageVo querynew(Integer nid, @RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "3") Integer limit){
         return service.selectNew(nid,page,limit);
     }
 }

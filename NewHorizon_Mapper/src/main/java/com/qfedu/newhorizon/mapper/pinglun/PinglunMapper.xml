@@ -29,11 +29,6 @@
   </select>
 
 
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from t_pinglun
-    where plid = #{plid,jdbcType=INTEGER}
-  </delete>
-
 
 
 
@@ -49,9 +44,9 @@
       #{flag,jdbcType=INTEGER})
   </insert>
 
-  <select id="selectHot" parameterType="java.lang.Integer" resultType="com.qfedu.newhorizon.domain.pinglun.PingLunVoList">
-    SELECT a.uid,a.text,a.addtime,a.like,d.pname,d.cname,a.nickname FROM (
-    SELECT p.uid,p.plid,p.text,u.nickname,p.`addtime`,COUNT(a.fatherid) AS `like` FROM t_pinglun p
+  <select id="selectHot" parameterType="java.lang.Integer" resultType="com.qfedu.newhorizon.domain.pinglun.PingLunVo">
+    SELECT a.uid,a.text,a.addtime,a.like,d.pname,d.cname,a.nickname,a.fatherid FROM (
+    SELECT p.uid,p.plid,p.text,p.fatherid,u.nickname,p.`addtime`,COUNT(a.fatherid) AS `like` FROM t_pinglun p
     LEFT OUTER JOIN (SELECT fatherid FROM t_pinglun WHERE TYPE = 2 ) a ON p.plid = a.fatherid
     LEFT JOIN web_user u ON p.uid=u.uid
     WHERE p.nid = #{nid} AND p.type=1  GROUP BY p.plid HAVING `like` >= #{minlikenum} ORDER BY `like` DESC
@@ -61,10 +56,10 @@
     ) d ON a.uid = d.uid limit 0,#{limit}
   </select>
 
-  <select id="selectNew" resultType="com.qfedu.newhorizon.common.result.PageVo">
+  <select id="selectNew" resultType="com.qfedu.newhorizon.domain.pinglun.PingLunVo">
 
-    SELECT a.uid,a.text,a.addtime,a.like,d.pname,d.cname,a.nickname FROM (
-    SELECT p.uid,p.plid,p.text,u.nickname,p.`addtime`,COUNT(a.fatherid) AS `like` FROM t_pinglun p
+    SELECT a.uid,a.text,a.addtime,a.like,d.pname,d.cname,a.nickname,a.fatherid FROM (
+    SELECT p.uid,p.plid,p.text,u.nickname,p.`addtime`,p.fatherid,COUNT(a.fatherid) AS `like` FROM t_pinglun p
     LEFT OUTER JOIN (SELECT fatherid FROM t_pinglun WHERE TYPE = 2 ) a ON p.plid = a.fatherid
     LEFT JOIN web_user u ON p.uid=u.uid
     WHERE p.nid = #{nid} AND p.type=1  GROUP BY p.plid  ORDER BY p.`addtime` DESC
@@ -75,4 +70,9 @@
 
 
 </select>
+
+
+  <select id="selectCount" resultType="java.lang.Integer">
+    select count(*) from t_pinglun where type = 1;
+  </select>
 </mapper>
