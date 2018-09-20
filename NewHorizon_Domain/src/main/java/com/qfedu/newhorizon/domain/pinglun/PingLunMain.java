@@ -8,7 +8,6 @@ import java.util.Date;
  */
 public class PingLunMain extends Pinglun{
 
-
     private Integer uid;
 
     private Integer nid;

@@ -45,7 +45,7 @@
       addtime, type, fatherid, 
       flag)
     values (#{uid,jdbcType=INTEGER}, #{nid,jdbcType=INTEGER}, #{text,jdbcType=VARCHAR}, 
-      now(), #{type,jdbcType=INTEGER}, #{fatherid,jdbcType=INTEGER},
+      now(), 1, #{fatherid,jdbcType=INTEGER},
       #{flag,jdbcType=INTEGER})
   </insert>
 
