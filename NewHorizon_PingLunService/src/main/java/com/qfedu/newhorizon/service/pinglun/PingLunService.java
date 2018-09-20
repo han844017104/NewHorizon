@@ -3,6 +3,7 @@ package com.qfedu.newhorizon.service.pinglun;
 
 import com.qfedu.newhorizon.common.result.PageVo;
 import com.qfedu.newhorizon.common.result.R;
+import com.qfedu.newhorizon.domain.pinglun.PingLunMain;
 import com.qfedu.newhorizon.domain.pinglun.Pinglun;
 
 import java.util.List;
@@ -18,9 +19,9 @@ import com.qfedu.newhorizon.domain.pinglun.Pinglun;
  */
 public interface PingLunService {
     //分页查询评论,最新评论20个
-    public List<Pinglun> selectNewPinglun(Integer nid, Integer page, Integer limit);
+    List<Pinglun> selectNewPinglun(Integer nid, Integer page, Integer limit);
     //点赞
-    public R addLike(Integer uid,Integer plid);
+    R addLike(Integer uid,Integer plid);
 
     R insert(Pinglun pinglun);
 
@@ -30,5 +31,5 @@ public interface PingLunService {
     PageVo selectNew( Integer nid, Integer page,Integer limit);
 
 
-
+    R addReply(PingLunMain pingLunMain);
 }

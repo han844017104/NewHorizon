@@ -52,11 +52,4 @@
          SELECT N.TITLE, N.TEXT, N.CREATTIME, COUNT(*) FROM T_NEWS N, T_PINGLUN P WHERE P.NID=N.NID AND N.NID=#{N.NID};
     </select>
 
-    <select id="selectCount" resultType="java.lang.Integer">
-        select count(*) from t_news
-    </select>
-
-    <insert id="savenew">
-        insert into t_news (title,text,createtime,tid) values(#{title},#{text},#{createtime},#{tid})
-    </insert>
 </mapper>

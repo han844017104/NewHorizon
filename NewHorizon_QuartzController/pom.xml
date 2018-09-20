@@ -9,14 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>NewHorizon_Domain</artifactId>
-    <packaging>jar</packaging>
+    <artifactId>NewHorizon_QuartzController</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.qfedu</groupId>
-            <artifactId>NewHorizon_Common</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-    </dependencies>
+
 </project>

@@ -3,8 +3,10 @@ package com.qfedu.newhorizon.provider.search;
 import com.qfedu.newhorizon.dao.NewsSearchDao;
 import com.qfedu.newhorizon.domain.news.NewESVO;
 import com.qfedu.newhorizon.service.search.NewsSearchService;
+
 import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -32,5 +34,11 @@ public class NewsSearchProvider implements NewsSearchService {
             ret.add(it.next());
         }
         return ret;
+    }
+
+    @Override
+    public List<NewESVO> queryOnceClike() {
+        //TODO
+        return null;
     }
 }
