@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:elasticsearch="http://www.springframework.org/schema/data/elasticsearch"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/data/elasticsearch http://www.springframework.org/schema/data/elasticsearch/spring-elasticsearch.xsd">
+    <!--1、加载配置-->
+    <context:property-placeholder location="classpath:*config.properties"></context:property-placeholder>
+    <!--2、设置客户端信息-->
+    <elasticsearch:transport-client id="client" cluster-name="${es.name}" cluster-nodes="${es.nodes}"></elasticsearch:transport-client>
+    <!--3、创建模板-->
+    <bean id="elasticsearchTemplate" class="org.springframework.data.elasticsearch.core.ElasticsearchTemplate" >
+        <constructor-arg name="client" ref="client"></constructor-arg>
+    </bean>
+    <!--4、扫描Spring Data 接口所在的包-->
+    <elasticsearch:repositories base-package="com.qfedu.newhorizon.dao"></elasticsearch:repositories>
+
+</beans>

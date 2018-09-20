@@ -25,6 +25,9 @@
         <module>NewHorizon_PingLunService</module>
         <module>NewHorizon_PingLunProvider</module>
         <module>NewHorizon_PingLunController</module>
+        <module>NewHorizon_SearchService</module>
+        <module>NewHorizon_SearchProvider</module>
+        <module>NewHorizon_SearchController</module>
     </modules>
 
     <!--jar依赖的版本号-->

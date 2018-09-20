@@ -9,8 +9,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>NewHorizon_Mapper</artifactId>
+    <artifactId>NewHorizon_SearchService</artifactId>
+
     <packaging>jar</packaging>
+
     <dependencies>
         <dependency>
             <groupId>com.qfedu</groupId>
@@ -23,9 +25,10 @@
             <version>1.0.0</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-elasticsearch</artifactId>
-            <version>3.0.9.RELEASE</version>
+            <groupId>com.qfedu</groupId>
+            <artifactId>NewHorizon_Mapper</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
+
 </project>
