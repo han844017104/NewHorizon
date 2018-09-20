@@ -7,11 +7,21 @@ package com.qfedu.newhorizon.domain.news;
 public class NewESVO {
     private String title;
 
+    private Integer clicknum;
+
     public String getTitle() {
         return title;
     }
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public Integer getClicknum() {
+        return clicknum;
+    }
+
+    public void setClicknum(Integer clicknum) {
+        this.clicknum = clicknum;
     }
 }
