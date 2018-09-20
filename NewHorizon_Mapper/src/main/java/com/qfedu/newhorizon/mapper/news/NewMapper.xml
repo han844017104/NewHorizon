@@ -41,7 +41,6 @@
             <result column="fatherid" property="fatherid" jdbcType="INTEGER" />
             <result column="flag" property="flag" jdbcType="INTEGER" />
         </collection>
-        <association property=""
     </resultMap>
 
     <select id="selectNewDetail" resultMap="ResultMapWithBLOBs">
