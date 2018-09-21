@@ -38,7 +38,7 @@ public class NewsSearchProvider implements NewsSearchService {
 
     @Override
     public List<NewESVO> queryOnceClike() {
-        //TODO
+       //TODO
         return null;
     }
 }

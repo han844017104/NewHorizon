@@ -9,4 +9,5 @@ import org.springframework.data.elasticsearch.repository.ElasticsearchRepository
  * 　                 　　　　　------   On   2018/9/20  17:14
  */
 public interface NewsSearchDao extends ElasticsearchRepository<NewESVO,Integer> {
+
 }
