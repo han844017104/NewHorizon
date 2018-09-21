@@ -31,6 +31,8 @@
         <module>NewHorizon_QuarService</module>
         <module>NewHorizon_QuarProvider</module>
         <module>NewHorizon_QuarController</module>
+        <module>NewHorizon_ShareService</module>
+        <module>NewHorizon_ShareProvider</module>
     </modules>
 
     <!--jar依赖的版本号-->
