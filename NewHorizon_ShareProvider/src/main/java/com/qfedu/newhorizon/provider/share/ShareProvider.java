@@ -1,6 +1,7 @@
 package com.qfedu.newhorizon.provider.share;
 
 import com.qfedu.newhorizon.service.share.ShareService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -9,4 +10,5 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ShareProvider implements ShareService {
+
 }
