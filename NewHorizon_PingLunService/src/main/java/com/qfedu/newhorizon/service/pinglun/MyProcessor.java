@@ -1,9 +1,8 @@
-package com.qfedu.newhorizon.common.myspider;
+package com.qfedu.newhorizon.service.pinglun;
 
 import com.qfedu.newhorizon.domain.newtype.NewTypeMain;
 import com.qfedu.newhorizon.mapper.news.NewMapper;
 import com.qfedu.newhorizon.mapper.newtype.NewTypeMapper;
-
 import org.springframework.stereotype.Service;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;

@@ -194,11 +194,7 @@
             <artifactId>webmagic-core</artifactId>
             <version>0.7.3</version>
         </dependency>
-        <dependency>
-            <groupId>com.qfedu</groupId>
-            <artifactId>NewHorizon_NewsService</artifactId>
-            <version>1.0.0</version>
-        </dependency>
+
 
     </dependencies>
 

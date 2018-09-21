@@ -1,6 +1,5 @@
 package com.qfedu.newhorizon.provider.news;
 
-import com.qfedu.newhorizon.common.myspider.MyProcessor;
 import com.qfedu.newhorizon.common.redis.RedisUtil;
 import com.qfedu.newhorizon.common.result.PageVo;
 import com.qfedu.newhorizon.common.result.R;
@@ -9,7 +8,6 @@ import com.qfedu.newhorizon.domain.news.New;
 
 import com.qfedu.newhorizon.domain.news.NewMain;
 import com.qfedu.newhorizon.domain.news.NewPage;
-import com.qfedu.newhorizon.domain.newtype.NewType;
 import com.qfedu.newhorizon.domain.newtype.NewTypeMain;
 import com.qfedu.newhorizon.mapper.news.NewMapper;
 import com.qfedu.newhorizon.mapper.newtype.NewTypeMapper;

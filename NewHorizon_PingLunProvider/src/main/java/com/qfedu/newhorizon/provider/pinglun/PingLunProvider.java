@@ -1,7 +1,6 @@
 package com.qfedu.newhorizon.provider.pinglun;
 
 import com.qfedu.newhorizon.common.result.PageVo;
-import com.qfedu.newhorizon.common.result.PinglunUtil;
 import com.qfedu.newhorizon.common.result.R;
 
 import com.qfedu.newhorizon.domain.pinglun.PingLunMain;
@@ -12,10 +11,10 @@ import com.qfedu.newhorizon.domain.pinglun.PingLunVoList;
 import com.qfedu.newhorizon.domain.pinglun.Pinglun;
 import com.qfedu.newhorizon.mapper.pinglun.PinglunMapper;
 import com.qfedu.newhorizon.service.pinglun.PingLunService;
+import com.qfedu.newhorizon.service.pinglun.PinglunUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
