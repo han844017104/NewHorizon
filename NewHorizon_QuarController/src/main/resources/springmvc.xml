@@ -15,8 +15,7 @@
 
     <!--扫描控制器类所在包 -->
     <context:component-scan
-            base-package="com.qfedu.newhorizon.controller.news"></context:component-scan>
-
+            base-package="com.qfedu.newhorizon.controller.pinglun"></context:component-scan>
 
     <mvc:annotation-driven></mvc:annotation-driven>
 

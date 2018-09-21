@@ -8,23 +8,23 @@ import java.util.List;
  */
 public class PingLunVoList {
 
-    private PingLunVo pinglun;
+    private PingLunVo father;
 
-    private List<PingLunVo> fathers;
+    private List<PingLunVo> childrens;
 
-    public PingLunVo getPinglun() {
-        return pinglun;
+    public PingLunVo getFather() {
+        return father;
     }
 
-    public void setPinglun(PingLunVo pinglun) {
-        this.pinglun = pinglun;
+    public void setFather(PingLunVo father) {
+        this.father = father;
     }
 
-    public List<PingLunVo> getFathers() {
-        return fathers;
+    public List<PingLunVo> getChildrens() {
+        return childrens;
     }
 
-    public void setFathers(List<PingLunVo> fathers) {
-        this.fathers = fathers;
+    public void setChildrens(List<PingLunVo> childrens) {
+        this.childrens = childrens;
     }
 }

@@ -17,7 +17,7 @@ import java.util.List;
 public interface NewsService {
     R selectByType(Integer type);
 
-    R selectByPage(@Param("page")Integer page, @Param("limit")Integer limit, @Param("type")Integer type);
+    PageVo selectByPage(@Param("page")Integer page, @Param("limit")Integer limit, @Param("type")Integer type);
 
     R selectById(Integer nid);
 
@@ -27,5 +27,8 @@ public interface NewsService {
 
 
     R selectNewDetail(Integer nid);
+
+    R myspider();
+
 
 }

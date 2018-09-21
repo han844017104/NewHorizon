@@ -27,7 +27,7 @@ public interface PingLunService {
 
     R selectHot(Integer nid,Integer minlikenum, Integer limit);
 
-    R selectNew( Integer nid, Integer page,Integer limit);
+    PageVo selectNew( Integer nid, Integer page,Integer limit);
 
 
 
