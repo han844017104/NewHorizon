@@ -121,7 +121,7 @@ public class NewsProvider implements NewsService {
 
     @Override
     public R myspider() {
-        MyProcessor.start(newMapper,newTypeMapper);
+//        MyProcessor.start(newMapper,newTypeMapper);
         return R.OK();
     }
 
