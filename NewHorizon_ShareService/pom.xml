@@ -9,20 +9,25 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>NewHorizon_QuarProvider</artifactId>
+    <artifactId>NewHorizon_ShareService</artifactId>
 
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
             <groupId>com.qfedu</groupId>
-            <artifactId>NewHorizon_QuarService</artifactId>
+            <artifactId>NewHorizon_Domain</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>
-            <groupId>org.quartz-scheduler</groupId>
-            <artifactId>quartz</artifactId>
-            <version>2.3.0</version>
+            <groupId>com.qfedu</groupId>
+            <artifactId>NewHorizon_Mapper</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.qfedu</groupId>
+            <artifactId>NewHorizon_Common</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 
