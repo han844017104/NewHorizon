@@ -1,6 +1,5 @@
 package com.qfedu.newhorizon.provider.news;
 
-import com.qfedu.newhorizon.common.myspider.MyProcessor;
 import com.qfedu.newhorizon.common.redis.RedisUtil;
 import com.qfedu.newhorizon.common.result.PageVo;
 import com.qfedu.newhorizon.common.result.R;
@@ -123,7 +122,7 @@ public class NewsProvider implements NewsService {
 
     @Override
     public R myspider() {
-        MyProcessor.start(newMapper,newTypeMapper);
+//        MyProcessor.start(newMapper,newTypeMapper);
         return R.OK();
     }
 
