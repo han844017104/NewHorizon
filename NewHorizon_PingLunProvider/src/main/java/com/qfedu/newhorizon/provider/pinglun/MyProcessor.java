@@ -1,4 +1,4 @@
-package com.qfedu.newhorizon.service.pinglun;
+package com.qfedu.newhorizon.provider.pinglun;
 
 import com.qfedu.newhorizon.domain.newtype.NewTypeMain;
 import com.qfedu.newhorizon.mapper.news.NewMapper;
@@ -17,6 +17,10 @@ import java.util.Map;
 
 @Service
 public class MyProcessor implements PageProcessor {
+
+    private static Spider spider = null;
+
+
     private static NewMapper newMapper = null;
     private static NewTypeMapper newTypeMapper = null;
     private static Map<Integer,String> newTypeMains = new HashMap<>();
@@ -79,6 +83,22 @@ public class MyProcessor implements PageProcessor {
         newMapper = newMappers;
         newTypeMapper = newTypeMappers;
         newTypeMains = newTypeMapper.selectAlltype();
-        new Spider(new MyProcessor()).addUrl("https://www.sina.com.cn/").thread(2).addPipeline(new ConsolePipeline()).runAsync();
+        synchronized ("spider") {
+            if (spider == null) {
+                synchronized ("a") {
+                    spider = new Spider(new MyProcessor()).addUrl("https://www.sina.com.cn/").thread(2).addPipeline(new ConsolePipeline());
+                }
+            }
+        }
+        spider.runAsync();
     }
+
+    public static void stop() throws Exception {
+        if (spider==null) {throw new Exception("Null Spider!");}
+        spider.stop();
+    }
+
+
 }
+
+

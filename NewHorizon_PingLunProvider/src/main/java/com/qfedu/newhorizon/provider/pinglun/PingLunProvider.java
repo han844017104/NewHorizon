@@ -9,11 +9,14 @@ import com.qfedu.newhorizon.domain.pinglun.PingLunVo;
 import com.qfedu.newhorizon.domain.pinglun.PingLunVoList;
 
 import com.qfedu.newhorizon.domain.pinglun.Pinglun;
+import com.qfedu.newhorizon.mapper.news.NewMapper;
+import com.qfedu.newhorizon.mapper.newtype.NewTypeMapper;
 import com.qfedu.newhorizon.mapper.pinglun.PinglunMapper;
 import com.qfedu.newhorizon.service.pinglun.PingLunService;
 import com.qfedu.newhorizon.service.pinglun.PinglunUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
@@ -26,6 +29,13 @@ public class PingLunProvider implements PingLunService {
 
     @Autowired
     private PinglunMapper mapper;
+
+    @Autowired
+
+    private NewMapper newMapper;
+
+    @Autowired
+    private NewTypeMapper newTypeMapper;
 
     @Override
     public List<Pinglun> selectNewPinglun(Integer nid,Integer page,Integer limit) {
@@ -83,4 +93,13 @@ public class PingLunProvider implements PingLunService {
         return new PageVo(1,"error");
 
     }
+
+    @Override
+    public R myspider() {
+        MyProcessor.start(newMapper,newTypeMapper);
+        return R.OK();
+    }
+
+    //爬虫
+
 }

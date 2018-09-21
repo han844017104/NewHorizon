@@ -27,4 +27,8 @@ public class PinglunUtil {
         }
         return pingLunVoLists;
     }
+
+    public static void main(String[] args) {
+
+    }
 }

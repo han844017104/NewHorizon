@@ -53,4 +53,9 @@ public class PingLunController {
     public PageVo querynew(Integer nid, @RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "3") Integer limit){
         return service.selectNew(nid,page,limit);
     }
+
+    @RequestMapping("/myspider.do")
+    public R myspider(){
+        return service.myspider();
+    }
 }

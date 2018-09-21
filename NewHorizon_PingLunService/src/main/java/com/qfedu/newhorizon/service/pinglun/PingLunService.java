@@ -29,6 +29,7 @@ public interface PingLunService {
 
     PageVo selectNew( Integer nid, Integer page,Integer limit);
 
+    R myspider();
 
 
 }
