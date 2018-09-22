@@ -1,12 +1,12 @@
 package com.qfedu.newhorizon.provider.pinglun;
 
-import com.qfedu.newhorizon.common.myspider.MyProcessor;
 import com.qfedu.newhorizon.common.result.PageVo;
+import com.qfedu.newhorizon.common.result.PinglunUtil;
 import com.qfedu.newhorizon.common.result.R;
 
-import com.qfedu.newhorizon.domain.news.NewMain;
 import com.qfedu.newhorizon.domain.pinglun.PingLunMain;
 
+import com.qfedu.newhorizon.domain.pinglun.PingLunVo;
 import com.qfedu.newhorizon.domain.pinglun.PingLunVoList;
 
 import com.qfedu.newhorizon.domain.pinglun.Pinglun;
@@ -15,8 +15,8 @@ import com.qfedu.newhorizon.service.pinglun.PingLunService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 /**
  * 　　　Create   By   Mr.Han
@@ -61,45 +61,27 @@ public class PingLunProvider implements PingLunService {
     //查询3个热评
     @Override
     public R selectHot(Integer nid, Integer minlikenum, Integer limit) {
-        List<PingLunVoList> pingLunVoLists = mapper.selectHot(nid, minlikenum,limit);
-        if(pingLunVoLists != null && pingLunVoLists.size() > 0){
+        List<PingLunVo> pingLunVos = mapper.selectHot(nid, minlikenum, limit);
+
+        if(pingLunVos != null && pingLunVos.size() > 0){
+            List<PingLunVoList> pingLunVoLists = PinglunUtil.toList(pingLunVos);
             return new R(0,"ok",pingLunVoLists);
         }
         return R.ERROR();
     }
+
     //分页查询最新评论
     @Override
-    public R selectNew(Integer nid, Integer page, Integer limit) {
-        PageVo pageVo = mapper.selectNew(nid, (page - 1) * limit, limit);
-        if(null != pageVo){
-            return new R(0,"ok",pageVo);
+    public PageVo selectNew(Integer nid, Integer page, Integer limit) {
+        Integer count = mapper.selectCount();
+
+        List<PingLunVo> pingLunVos = mapper.selectNew(nid, (page - 1) * limit, limit);
+        if(pingLunVos != null && pingLunVos.size() > 0){
+            List<PingLunVoList> pingLunVoLists = PinglunUtil.toList(pingLunVos);
+            return PageVo.createPage(pingLunVoLists,count);
         }
-        return R.ERROR();
 
-    }
+        return new PageVo(1,"error");
 
-    /**
-     * 评论回复
-     * @param pingLunMain 评论主体
-     * @return R
-     */
-    @Override
-    public R addReply(PingLunMain pingLunMain) {
-        if(pingLunMain!=null){
-            if(pingLunMain.getFatherid()!=null){
-                //有父
-                if(pingLunMain.getUid()!=null){
-                    //该用户已登录
-                    if(pingLunMain.getText()!=null&& Objects.equals("",pingLunMain.getText())){
-                        //评论有内容
-                        return new R(0,"success",mapper.insert(pingLunMain));
-                    }
-
-                }
-
-            }
-
-        }
-        return R.ERROR();
     }
 }

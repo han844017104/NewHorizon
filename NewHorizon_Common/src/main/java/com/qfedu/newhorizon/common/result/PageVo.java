@@ -9,6 +9,14 @@ public class PageVo<T> {
     private List<T> data;
 
 
+    public PageVo(int code, String msg) {
+        this.code = code;
+        this.msg = msg;
+    }
+
+    public PageVo() {
+    }
+
     public static <T>  PageVo<T> createPage(List<T> data, Integer count){
         PageVo<T> pageVo=new PageVo<>();
         pageVo.setCode(0);
@@ -17,6 +25,9 @@ public class PageVo<T> {
         pageVo.setData(data);
         return pageVo;
     }
+
+
+
 
     public int getCode() {
         return code;

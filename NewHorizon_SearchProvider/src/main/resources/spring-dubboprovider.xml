@@ -12,5 +12,5 @@ http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubb
     <!--3、设置协议-->
     <dubbo:protocol name="dubbo" port="20884"></dubbo:protocol>
     <!--4、设置发布的服务-->
-    <dubbo:service interface="com.qfedu.newhorizon.service.search.NewsSearchService" ref="newsSearchService" retries="0" timeout="20000"></dubbo:service>
+    <dubbo:service interface="com.qfedu.newhorizon.service.search.NewsSearchService" ref="newsSearchProvider" retries="0" timeout="20000"></dubbo:service>
 </beans>

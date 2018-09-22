@@ -10,13 +10,15 @@ public class PingLunVo extends Pinglun{
 
     private Integer uid;
 
-    private String username;
+    private String nickname;
 
     private String userphoto;
 
     private String text;
 
-    private String addr;
+    private String pname;
+
+    private String cname;
 
     private Date addtime;
 
@@ -32,12 +34,44 @@ public class PingLunVo extends Pinglun{
         this.uid = uid;
     }
 
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public String getUserphoto() {
+        return userphoto;
+    }
+
+    public void setUserphoto(String userphoto) {
+        this.userphoto = userphoto;
+    }
+
     public String getText() {
         return text;
     }
 
     public void setText(String text) {
-        this.text = text == null ? null : text.trim();
+        this.text = text;
+    }
+
+    public String getPname() {
+        return pname;
+    }
+
+    public void setPname(String pname) {
+        this.pname = pname;
+    }
+
+    public String getCname() {
+        return cname;
+    }
+
+    public void setCname(String cname) {
+        this.cname = cname;
     }
 
     public Date getAddtime() {
@@ -56,35 +90,11 @@ public class PingLunVo extends Pinglun{
         this.fatherid = fatherid;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getUserphoto() {
-        return userphoto;
-    }
-
-    public void setUserphoto(String userphoto) {
-        this.userphoto = userphoto;
-    }
-
     public Integer getLike() {
         return like;
     }
 
     public void setLike(Integer like) {
         this.like = like;
-    }
-
-    public String getAddr() {
-        return addr;
-    }
-
-    public void setAddr(String addr) {
-        this.addr = addr;
     }
 }

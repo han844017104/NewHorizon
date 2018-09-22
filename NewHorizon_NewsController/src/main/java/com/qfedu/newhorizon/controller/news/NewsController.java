@@ -1,6 +1,7 @@
 package com.qfedu.newhorizon.controller.news;
 
 
+import com.qfedu.newhorizon.common.result.PageVo;
 import com.qfedu.newhorizon.service.news.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class NewsController {
 
     @Autowired
-    private NewsService service;
+    private NewsService newsServiceProvider;
 
 
     /**
@@ -33,7 +34,7 @@ public class NewsController {
      */
     @RequestMapping("/querybytype.do")
     public R querybytype(Integer type){
-        return service.selectByType(type);
+        return newsServiceProvider.selectByType(type);
     }
 
     /**
@@ -44,8 +45,8 @@ public class NewsController {
      * @return
      */
     @RequestMapping("/querybytypepage.do")
-    public R querybytypepage(@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "20") Integer limit, Integer type){
-        return service.selectByPage(page,limit,type);
+    public PageVo querybytypepage(@RequestParam(defaultValue = "1") Integer page, @RequestParam(defaultValue = "20") Integer limit, Integer type){
+        return newsServiceProvider.selectByPage(page,limit,type);
     }
 
     /**
@@ -55,7 +56,7 @@ public class NewsController {
      */
     @RequestMapping("/querynewdetail.do")
     public R querynewdetail(Integer nid){
-       return service.selectNewDetail(nid);
+       return newsServiceProvider.selectNewDetail(nid);
     }
 
     /**
@@ -64,7 +65,7 @@ public class NewsController {
      */
     @RequestMapping("/queryalltypes.do")
     public R queryalltypes(){
-        return service.selectAll();
+        return newsServiceProvider.selectAll();
     }
 
     /**
@@ -73,7 +74,13 @@ public class NewsController {
      */
     @RequestMapping("/queryallfathertype.do")
     public R queryallfathertype(){
-        return service.selectFather();
+        return newsServiceProvider.selectFather();
+    }
+
+    //爬虫
+    @RequestMapping("/myspider.do")
+    public R myspider(){
+        return newsServiceProvider.myspider();
     }
 
 }

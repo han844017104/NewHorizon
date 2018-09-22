@@ -6,6 +6,9 @@ import com.qfedu.newhorizon.common.result.R;
 import com.qfedu.newhorizon.common.result.TypeVo;
 import com.qfedu.newhorizon.domain.news.New;
 
+import com.qfedu.newhorizon.domain.news.NewMain;
+import com.qfedu.newhorizon.domain.news.NewPage;
+import com.qfedu.newhorizon.domain.newtype.NewType;
 import com.qfedu.newhorizon.domain.newtype.NewTypeMain;
 import com.qfedu.newhorizon.mapper.news.NewMapper;
 import com.qfedu.newhorizon.mapper.newtype.NewTypeMapper;
@@ -33,32 +36,36 @@ public class NewsProvider implements NewsService {
     private RedisUtil redisUtil;
 
 
+
+
     //按分类查询
     @Override
     public R selectByType(Integer type) {
-        List<New> news = newMapper.selectByType(type);
-        if(null != news && news.size() > 0){
-            return new R(0,"ok",news);
+        List<NewPage> newPages = newMapper.selectByType(type);
+        if(null != newPages && newPages.size() > 0){
+            return new R(0,"ok",newPages);
         }
         return R.ERROR();
     }
 
     //分类分页查询
     @Override
-    public R selectByPage(Integer page, Integer limit, Integer type) {
-        PageVo pageVo = newMapper.selectByPage((page - 1) * limit, limit, type);
-        if(null != pageVo){
-            return new R(0,"ok",pageVo);
+    public PageVo selectByPage(Integer page, Integer limit, Integer type) {
+        Integer count = newMapper.selectCount();
+
+        List<NewPage> newPages = newMapper.selectByPage((page - 1) * limit, limit, type);
+        if(null != newPages){
+            return PageVo.createPage(newPages,count);
         }
-        return R.ERROR();
+        return new PageVo(1,"error");
     }
 
     //id查询详情
     @Override
     public R selectById(Integer nid) {
-        New aNew = newMapper.selectById(nid);
-        if(null != aNew){
-            return new R(0,"ok",aNew);
+        NewMain newMain = newMapper.selectById(nid);
+        if(null != newMain){
+            return new R(0,"ok",newMain);
         }
         return R.ERROR();
     }
@@ -112,4 +119,12 @@ public class NewsProvider implements NewsService {
         }
         return R.ERROR();
     }
+
+    @Override
+    public R myspider() {
+//        MyProcessor.start(newMapper,newTypeMapper);
+        return R.OK();
+    }
+
+
 }

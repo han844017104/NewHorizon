@@ -41,6 +41,7 @@
             <result column="fatherid" property="fatherid" jdbcType="INTEGER" />
             <result column="flag" property="flag" jdbcType="INTEGER" />
         </collection>
+        <association property=""
     </resultMap>
 
     <select id="selectNewDetail" resultMap="ResultMapWithBLOBs">
@@ -51,8 +52,11 @@
          SELECT N.TITLE, N.TEXT, N.CREATTIME, COUNT(*) FROM T_NEWS N, T_PINGLUN P WHERE P.NID=N.NID AND N.NID=#{N.NID};
     </select>
 
-    <select id="selectByHotTen" resultType="com.qfedu.newhorizon.domain.news.NewESVO">
-        SELECT n.nid as nid,n.title as title FROM t_news n LEFT JOIN t_newclick nc ON n.nid = nc.nid ORDER BY ( SELECT COUNT(nid ) as clicknum FROM t_newclick GROUP BY nid) DESC limit 0,10;
+    <select id="selectCount" resultType="java.lang.Integer">
+        select count(*) from t_news
     </select>
 
+    <insert id="savenew">
+        insert into t_news (title,text,createtime,tid) values(#{title},#{text},#{createtime},#{tid})
+    </insert>
 </mapper>
