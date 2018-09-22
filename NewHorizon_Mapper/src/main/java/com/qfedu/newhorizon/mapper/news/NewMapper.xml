@@ -58,4 +58,8 @@
     <insert id="savenew">
         insert into t_news (title,text,createtime,tid) values(#{title},#{text},#{createtime},#{tid})
     </insert>
+
+    <insert id="insertNewClick" parameterType="java.lang.Integer">
+        insert into t_newclick value (null,#{nid},now())
+    </insert>
 </mapper>

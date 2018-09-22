@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>NewHorizon_NewsProvider</artifactId>
+    <artifactId>NewHorizon_NewsMQ</artifactId>
 
     <packaging>war</packaging>
 
