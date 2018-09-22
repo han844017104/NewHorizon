@@ -8,7 +8,6 @@ import com.qfedu.newhorizon.domain.news.New;
 
 import com.qfedu.newhorizon.domain.news.NewMain;
 import com.qfedu.newhorizon.domain.news.NewPage;
-import com.qfedu.newhorizon.domain.newtype.NewType;
 import com.qfedu.newhorizon.domain.newtype.NewTypeMain;
 import com.qfedu.newhorizon.mapper.news.NewMapper;
 import com.qfedu.newhorizon.mapper.newtype.NewTypeMapper;

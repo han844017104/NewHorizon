@@ -1,4 +1,4 @@
-package com.qfedu.newhorizon.common.result;
+package com.qfedu.newhorizon.service.pinglun;
 
 import com.qfedu.newhorizon.domain.pinglun.PingLunVo;
 import com.qfedu.newhorizon.domain.pinglun.PingLunVoList;
@@ -26,5 +26,9 @@ public class PinglunUtil {
 
         }
         return pingLunVoLists;
+    }
+
+    public static void main(String[] args) {
+
     }
 }

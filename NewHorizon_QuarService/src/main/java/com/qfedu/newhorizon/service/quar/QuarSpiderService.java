@@ -5,4 +5,5 @@ package com.qfedu.newhorizon.service.quar;
  * 　                 　　　　　------   On   2018/9/21  20:26
  */
 public interface QuarSpiderService {
+    void start(Integer num);
 }
