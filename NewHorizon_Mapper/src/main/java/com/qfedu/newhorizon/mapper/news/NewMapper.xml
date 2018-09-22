@@ -41,7 +41,6 @@
             <result column="fatherid" property="fatherid" jdbcType="INTEGER" />
             <result column="flag" property="flag" jdbcType="INTEGER" />
         </collection>
-        <association property=""
     </resultMap>
 
     <select id="selectNewDetail" resultMap="ResultMapWithBLOBs">
@@ -58,5 +57,9 @@
 
     <insert id="savenew">
         insert into t_news (title,text,createtime,tid) values(#{title},#{text},#{createtime},#{tid})
+    </insert>
+
+    <insert id="insertNewClick" parameterType="java.lang.Integer">
+        insert into t_newclick value (null,#{nid},now())
     </insert>
 </mapper>

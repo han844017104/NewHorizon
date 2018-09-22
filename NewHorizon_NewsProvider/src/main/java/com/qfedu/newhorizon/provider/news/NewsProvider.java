@@ -1,8 +1,11 @@
 package com.qfedu.newhorizon.provider.news;
 
+import com.alibaba.fastjson.JSON;
+import com.qfedu.newhorizon.common.mqVO.mqVO;
 import com.qfedu.newhorizon.common.redis.RedisUtil;
 import com.qfedu.newhorizon.common.result.PageVo;
 import com.qfedu.newhorizon.common.result.R;
+import com.qfedu.newhorizon.common.result.RO;
 import com.qfedu.newhorizon.common.result.TypeVo;
 import com.qfedu.newhorizon.domain.news.New;
 
@@ -13,8 +16,13 @@ import com.qfedu.newhorizon.mapper.news.NewMapper;
 import com.qfedu.newhorizon.mapper.newtype.NewTypeMapper;
 import com.qfedu.newhorizon.service.news.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jms.core.JmsTemplate;
+import org.springframework.jms.core.MessageCreator;
 import org.springframework.stereotype.Service;
 
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.Session;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +42,8 @@ public class NewsProvider implements NewsService {
     @Autowired
     private RedisUtil redisUtil;
 
-
+    @Autowired
+    private JmsTemplate jms;
 
 
     //按分类查询
@@ -64,6 +73,8 @@ public class NewsProvider implements NewsService {
     public R selectById(Integer nid) {
         NewMain newMain = newMapper.selectById(nid);
         if(null != newMain){
+            String json = JSON.toJSONString(new mqVO<New>(1,new New(newMain.getNid())));
+            jms.send(session -> session.createTextMessage(json));
             return new R(0,"ok",newMain);
         }
         return R.ERROR();
@@ -123,6 +134,11 @@ public class NewsProvider implements NewsService {
     public R myspider() {
 //        MyProcessor.start(newMapper,newTypeMapper);
         return R.OK();
+    }
+
+    @Override
+    public RO insertClick(Integer nid) {
+        return RO.creat(newMapper.insertNewClick(nid));
     }
 
 

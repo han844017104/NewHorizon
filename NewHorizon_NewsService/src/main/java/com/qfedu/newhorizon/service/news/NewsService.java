@@ -3,6 +3,7 @@ package com.qfedu.newhorizon.service.news;
 
 import com.qfedu.newhorizon.common.result.PageVo;
 import com.qfedu.newhorizon.common.result.R;
+import com.qfedu.newhorizon.common.result.RO;
 import com.qfedu.newhorizon.domain.news.New;
 import com.qfedu.newhorizon.domain.newtype.NewType;
 import org.apache.ibatis.annotations.Param;
@@ -25,10 +26,10 @@ public interface NewsService {
 
     R selectFather();
 
-
     R selectNewDetail(Integer nid);
 
     R myspider();
 
+    RO insertClick(Integer nid);
 
 }

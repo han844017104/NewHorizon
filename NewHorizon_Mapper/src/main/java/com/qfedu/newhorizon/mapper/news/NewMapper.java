@@ -22,4 +22,5 @@ public interface NewMapper {
 
     NewMain selectNewDetail(Integer nid);
 
+    Integer insertNewClick(Integer nid);
 }

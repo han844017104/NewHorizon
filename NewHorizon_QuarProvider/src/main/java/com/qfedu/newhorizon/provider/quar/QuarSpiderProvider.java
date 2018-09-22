@@ -25,13 +25,10 @@ public class QuarSpiderProvider implements QuarSpiderService {
     @Override
     public void start(Integer num) {
         Trigger trigger = TriggerBuilder.newTrigger().withIdentity("NewSpider", "Spider").withSchedule(CronScheduleBuilder.cronSchedule("")).build();
-        JobDetail detail = JobBuilder.newJob(new Job() {
-            @Override
-            public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
+        JobDetail detail = JobBuilder.newJob(((Job) jobExecutionContext -> {
 
-                System.out.println("新闻爬虫功能已开启 ， 本次开启每次爬取 " + num == null ? 1000 : num + "条数据");
-            }
-        }.getClass()).build();
+            System.out.println("新闻爬虫功能已开启 ， 本次开启每次爬取 " + num == null ? 1000 : num + "条数据");
+        }).getClass()).build();
         try {
             Scheduler defaultScheduler = StdSchedulerFactory.getDefaultScheduler();
             defaultScheduler.scheduleJob(detail, trigger);
