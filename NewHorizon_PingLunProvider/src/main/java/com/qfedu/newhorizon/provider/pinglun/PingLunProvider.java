@@ -96,6 +96,7 @@ public class PingLunProvider implements PingLunService {
 
     @Override
     public R myspider() {
+        System.out.println("provider");
         MyProcessor.start(newMapper,newTypeMapper);
         return R.OK();
     }
