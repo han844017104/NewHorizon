@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.qfedu.newhorizon.domain.news.New;
 import com.qfedu.newhorizon.service.news.NewsService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.jms.JMSException;
 import javax.jms.Message;
@@ -16,14 +17,8 @@ import javax.jms.TextMessage;
  */
 public class NewsMQListener implements MessageListener {
 
+    @Autowired
     private NewsService ns;
-
-    public NewsMQListener(NewsService ns) {
-        this.ns = ns;
-    }
-
-    public NewsMQListener() {
-    }
 
     @Override
     public void onMessage(Message message) {
