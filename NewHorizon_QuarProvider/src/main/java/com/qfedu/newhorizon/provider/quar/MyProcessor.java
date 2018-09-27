@@ -1,4 +1,4 @@
-package com.qfedu.newhorizon.provider.pinglun;
+package com.qfedu.newhorizon.provider.quar;
 
 import com.qfedu.newhorizon.domain.newtype.NewTypeMain;
 import com.qfedu.newhorizon.mapper.news.NewMapper;
@@ -25,6 +25,7 @@ public class MyProcessor implements PageProcessor {
     private static NewTypeMapper newTypeMapper = null;
     private static Map<Integer,String> newTypeMains = new HashMap<>();
     private volatile int num = 0;
+    private static int max = 1000;
 
     private Site site = Site.me().addHeader("User-Agent","Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36").setCharset("utf-8").setSleepTime(100).setRetryTimes(1);
     private List<String> url = new ArrayList<>();
@@ -71,7 +72,7 @@ public class MyProcessor implements PageProcessor {
             newMapper.savenew(index,context.get(0),title.get(0),time.get(0));
             synchronized ("num") {num ++;}
 
-            if (num >= 1000){
+            if (num >= max){
                 try {
                     stop();
                 } catch (Exception e) {
@@ -87,10 +88,11 @@ public class MyProcessor implements PageProcessor {
         return site;
     }
 
-    public static void  start(NewMapper newMappers,NewTypeMapper newTypeMappers){
+    public static void  start(NewMapper newMappers,NewTypeMapper newTypeMappers,Integer times){
         newMapper = newMappers;
         newTypeMapper = newTypeMappers;
         newTypeMains = newTypeMapper.selectAlltype();
+        max = times == null ? 1000 : times;
         synchronized ("spider") {
             if (spider == null) {
                 synchronized ("a") {

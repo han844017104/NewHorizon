@@ -16,7 +16,6 @@ import com.qfedu.newhorizon.service.pinglun.PingLunService;
 import com.qfedu.newhorizon.service.pinglun.PinglunUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 

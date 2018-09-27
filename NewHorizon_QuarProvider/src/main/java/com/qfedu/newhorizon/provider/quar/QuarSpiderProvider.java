@@ -26,7 +26,7 @@ public class QuarSpiderProvider implements QuarSpiderService {
     public void start(Integer num) {
         Trigger trigger = TriggerBuilder.newTrigger().withIdentity("NewSpider", "Spider").withSchedule(CronScheduleBuilder.cronSchedule("")).build();
         JobDetail detail = JobBuilder.newJob(((Job) jobExecutionContext -> {
-            //待爬虫调整完毕后在此处加入爬虫启动方案
+            MyProcessor.start(nm, nt,num);
             System.out.println("新闻爬虫功能已开启 ， 本次开启每次爬取 " + num == null ? 1000 : num + "条数据");
         }).getClass()).build();
         try {
